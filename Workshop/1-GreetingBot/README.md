@@ -1,6 +1,6 @@
 # GreetingBot
 
-Build a Greeting Bot Workshop project.
+Build a Greeting Bot Project.
 
 ## Source Code
 
