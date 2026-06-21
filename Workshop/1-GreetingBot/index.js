@@ -1,10 +1,3 @@
-# GreetingBot
-
-Build a Greeting Bot Workshop project.
-
-## Source Code
-
-```js
 console.log("Hi there!");
 console.log("I am excited to talk to you.");
 let bot;
@@ -38,8 +31,3 @@ const favoriteSubjectSentence =
 console.log(favoriteSubjectSentence);
 
 console.log("Well, it was nice to talk to you. Have a nice day!");
-```
-
-## Output
-
-![Image](https://github.com/user-attachments/assets/2167254d-5d59-428f-8b3a-0a46842b0cf9)
