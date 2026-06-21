@@ -4,7 +4,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 
 ## Labs
 
-- [ ] 1.JavaScriptTriviaBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/1-JavaScriptTriviaBot)
+- [x] 1. JavaScriptTriviaBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/1-JavaScriptTriviaBot)
 
 ## Workshop
 
