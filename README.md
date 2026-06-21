@@ -5,7 +5,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 ## Labs
 
 - [x] 1. JavaScriptTriviaBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/1-JavaScriptTriviaBot)
-- [ ] 2. SentenceMaker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/2-SentenceMaker)
+- [x] 2. SentenceMaker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/2-SentenceMaker)
 
 ## Workshop
 
