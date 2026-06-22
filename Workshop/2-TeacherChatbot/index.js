@@ -38,3 +38,16 @@ console.log(
 
 const lastCharacter = subject[subject.length - 1];
 console.log(lastCharacter);
+
+const learningIsFunSentence = "Learning is fun.";
+
+console.log(
+  "Here are examples of finding the positions of substrings in the sentence.",
+);
+
+console.log(learningIsFunSentence.indexOf("Learning"));
+
+console.log(learningIsFunSentence.indexOf("fun"));
+console.log(learningIsFunSentence.indexOf("learning"));
+
+console.log("I hope you enjoyed learning today.");
