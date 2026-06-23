@@ -1,4 +1,4 @@
-# 3-StringInspector
+# StringInspector
 
 Build a String Inspector Project.
 
