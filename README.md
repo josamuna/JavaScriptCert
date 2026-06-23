@@ -11,6 +11,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 
 - [x] 1. GreetingBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/1-GreetingBot)
 - [x] 2. TeacherChatbot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/2-TeacherChatbot)
+- [x] 3. StringInspector - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/3-StringInspector)
 
 ## Certification Projects
 

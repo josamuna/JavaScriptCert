@@ -1,4 +1,4 @@
-# 2-TeacherChatbot
+# TeacherChatbot
 
 Build a Teacher Chatbot Project.
 
