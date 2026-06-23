@@ -13,3 +13,7 @@ console.log(trimmedStart);
 const trimmedEnd = userInput.trimEnd();
 console.log("After using the trimEnd() method, trailing spaces removed:");
 console.log(trimmedEnd);
+
+const upperCaseInput = cleanedInput.toUpperCase();
+console.log("Result of using the toUpperCase() method:");
+console.log(upperCaseInput);
