@@ -13,3 +13,13 @@ console.log(exampleSentence);
 const dogsOnlySentence = exampleSentence.replaceAll("cats", "dogs");
 console.log("Replacing all occurrences of cats with dogs:");
 console.log(dogsOnlySentence);
+
+const learningSentence = "I love learning!";
+console.log("Original learning sentence:");
+console.log(learningSentence);
+
+const repeatedLove = "love ".repeat(3).trimEnd();
+console.log(repeatedLove);
+
+const newSentence = `I ${repeatedLove} learning.`;
+console.log(newSentence);
