@@ -1,13 +1,5 @@
-const truthyOrFalsy = "";
+const hasDeveloperJob = true;
 
-console.log(Boolean(truthyOrFalsy));
-
-/*
-Falsy values
-    "" (empty string)
-    0
-    false
-    null
-    undefined
-    NaN
-*/
+if (hasDeveloperJob) {
+  console.log("Timmy is employed as a developer.");
+}
