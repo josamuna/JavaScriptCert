@@ -7,7 +7,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 1. JavaScriptTriviaBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/1-JavaScriptTriviaBot)
 - [x] 2. SentenceMaker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/2-SentenceMaker)
 - [x] 3. DebugTypeCoercionErrors - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/3-DebugTypeCoercionErrors)
-- [ ] 4. DebugIncrementDecrementOperatorErrors - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/4-DebugIncrementDecrementOperatorErrors)
+- [x] 4. DebugIncrementDecrementOperatorErrors - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/4-DebugIncrementDecrementOperatorErrors)
 
 ## Workshop
 
