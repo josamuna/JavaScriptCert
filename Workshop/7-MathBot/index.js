@@ -54,3 +54,5 @@ const maxNum = Math.max(3, 125, 55, 24);
 console.log(maxNum);
 const minNum = Math.min(6, 90, 14, 90, 2);
 console.log(minNum);
+
+console.log("It was fun learning about the different Math methods with you!");

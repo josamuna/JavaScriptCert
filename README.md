@@ -17,7 +17,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 4. StringFormatter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/4-StringFormatter)
 - [x] 5. StringTransformer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/5-StringTransformer)
 - [x] 6. LogicCheckerApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/6-LogicCheckerApp)
-- [ ] 7. MathBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/7-MathBot)
+- [x] 7. MathBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/7-MathBot)
 
 ## Certification Projects
 
