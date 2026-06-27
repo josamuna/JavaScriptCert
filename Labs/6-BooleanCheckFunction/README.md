@@ -27,4 +27,4 @@ console.log(booWho("false")); // false
 
 ## Output
 
-![Image]()
+![Image](https://github.com/user-attachments/assets/cdfafc57-2047-4fc5-af84-0303b21c9f73)

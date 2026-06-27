@@ -9,7 +9,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 3. DebugTypeCoercionErrors - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/3-DebugTypeCoercionErrors)
 - [x] 4. DebugIncrementDecrementOperatorErrors - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/4-DebugIncrementDecrementOperatorErrors)
 - [x] 5. FortuneTeller - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/5-FortuneTeller)
-- [ ] 6. BooleanCheckFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/6-BooleanCheckFunction)
+- [x] 6. BooleanCheckFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/6-BooleanCheckFunction)
 
 ## Workshop
 
