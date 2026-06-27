@@ -26,3 +26,17 @@ function calculateQuotient(num1, num2) {
 
 console.log(calculateQuotient(7, 11));
 console.log(calculateQuotient(3, 0));
+
+function calculateSquare(num) {
+  return num ** 2;
+}
+
+console.log(calculateSquare(2));
+console.log(calculateSquare(9));
+
+function calculateSquareRoot(num) {
+  return Math.sqrt(num);
+}
+
+console.log(calculateSquareRoot(25));
+console.log(calculateSquareRoot(100));
