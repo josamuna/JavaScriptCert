@@ -1,5 +1,5 @@
 function maskEmail(email) {
-  if (!email) {
+  if (!email || !email.includes("@")) {
     return "Invalid email address.";
   }
   let maskedEmail = "";
@@ -13,7 +13,15 @@ function maskEmail(email) {
   return maskedEmail;
 }
 
-let email = "mymaskedemail@email.com";
+let email = ""; // Empty email
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
+email = "bademail"; // Bad email
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
+email = "mymaskedemail@email.com";
 console.log(
   `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
 );
