@@ -6,7 +6,7 @@ Build a Email Masker Project.
 
 ```js
 function maskEmail(email) {
-  if (!email) {
+  if (!email || !email.includes("@")) {
     return "Invalid email address.";
   }
   let maskedEmail = "";
@@ -20,7 +20,15 @@ function maskEmail(email) {
   return maskedEmail;
 }
 
-let email = "mymaskedemail@email.com";
+let email = ""; // Empty email
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
+email = "bademail"; // Bad email
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
+email = "mymaskedemail@email.com";
 console.log(
   `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
 );
@@ -44,4 +52,4 @@ console.log(
 
 ## Output
 
-![Image](https://github.com/user-attachments/assets/65cfeed4-ace8-4ca3-9e30-d948a6c2bf46)
+![Image](https://github.com/user-attachments/assets/a96f219c-08cc-4529-89d0-c34e7c06910c)
