@@ -12,7 +12,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 6. BooleanCheckFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/6-BooleanCheckFunction)
 - [x] 7. EmailMasker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/7-EmailMasker)
 - [x] 8. CelsiusFahrenheitConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/8-CelsiusFahrenheitConverter)
-- [ ] 9. CardCountingAssistant - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/9-CardCountingAssistant)
+- [x] 9. CardCountingAssistant - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/9-CardCountingAssistant)
 
 ## Workshop
 
