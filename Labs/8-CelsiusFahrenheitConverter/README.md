@@ -28,17 +28,17 @@ console.log(convertCtoF(celsius)); // NaN
 
 // Test with valid inputs.
 celsius = 0;
-console.log(convertCtoF(celsius)); // 32 F
+console.log(`${celsius} C = ${convertCtoF(celsius)} F`); // 32 F
 celsius = -30;
-console.log(convertCtoF(celsius)); // -22 F
+console.log(`${celsius} C = ${convertCtoF(celsius)} F`); // -22 F
 celsius = -10;
-console.log(convertCtoF(celsius)); // 14 F
+console.log(`${celsius} C = ${convertCtoF(celsius)} F`); // 14 F
 celsius = 20;
-console.log(convertCtoF(celsius)); // 68 F
+console.log(`${celsius} C = ${convertCtoF(celsius)} F`); // 68 F
 celsius = 30;
-console.log(convertCtoF(celsius)); // 86 F
+console.log(`${celsius} C = ${convertCtoF(celsius)} F`); // 86 F
 ```
 
 ## Output
 
-![Image]()
+![Image](https://github.com/user-attachments/assets/7cbd7c68-1c2b-471d-84e5-ad8e3e4f8642)
