@@ -11,6 +11,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 5. FortuneTeller - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/5-FortuneTeller)
 - [x] 6. BooleanCheckFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/6-BooleanCheckFunction)
 - [x] 7. EmailMasker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/7-EmailMasker)
+- [ ] 8. CelsiusFahrenheitConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/8-CelsiusFahrenheitConverter)
 
 ## Workshop
 
