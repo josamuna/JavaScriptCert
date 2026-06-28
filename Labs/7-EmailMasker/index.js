@@ -14,12 +14,22 @@ function maskEmail(email) {
 }
 
 let email = "mymaskedemail@email.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "apple.pie@example.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "freecodecamp@example.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "info@test.dev";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "user@domain.org";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);

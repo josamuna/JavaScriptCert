@@ -21,17 +21,27 @@ function maskEmail(email) {
 }
 
 let email = "mymaskedemail@email.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "apple.pie@example.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "freecodecamp@example.com";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "info@test.dev";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 email = "user@domain.org";
-console.log(maskEmail(email));
+console.log(
+  `The email '${email}' has masked and becomes '${maskEmail(email)}'`,
+);
 ```
 
 ## Output
 
-![Image]()
+![Image](https://github.com/user-attachments/assets/65cfeed4-ace8-4ca3-9e30-d948a6c2bf46)
