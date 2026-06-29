@@ -36,3 +36,6 @@ console.log(getShoppingListMsg(shoppingList));
 console.log("On second thought, maybe we should be more health conscious.");
 
 shoppingList.shift();
+shoppingList[0] = "Canola Oil";
+
+console.log(getShoppingListMsg(shoppingList));
