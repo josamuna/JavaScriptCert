@@ -27,6 +27,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 7. MathBot - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/7-MathBot)
 - [x] 8. Calculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/8-Calculator)
 - [x] 9. LoanQualificationChecker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/9-LoanQualificationChecker)
+- [ ] 10. ShoppingList - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/10-ShoppingList)
 
 ## Certification Projects
 
