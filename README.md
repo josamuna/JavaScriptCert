@@ -15,6 +15,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 9. CardCountingAssistant - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/9-CardCountingAssistant)
 - [x] 10. LeapYearCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/10-LeapYearCalculator)
 - [x] 11. TruncateStringAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/11-TruncateStringAlgorithm)
+- [ ] 12. LunchPickerProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/12-LunchPickerProgram)
 
 ## Workshop
 
