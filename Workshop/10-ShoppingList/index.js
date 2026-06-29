@@ -27,3 +27,12 @@ console.log("This looks like too much junk food.");
 
 shoppingList.pop();
 console.log(getShoppingListMsg(shoppingList));
+
+console.log("It might be nice to get a dessert.");
+
+shoppingList.unshift("Chocolate Cake");
+console.log(getShoppingListMsg(shoppingList));
+
+console.log("On second thought, maybe we should be more health conscious.");
+
+shoppingList.shift();
