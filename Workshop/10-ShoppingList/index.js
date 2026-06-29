@@ -22,3 +22,8 @@ console.log(getShoppingListMsg(shoppingList));
 
 shoppingList.push("Popcorn", "Beef Jerky", "Potato Chips");
 console.log(getShoppingListMsg(shoppingList));
+
+console.log("This looks like too much junk food.");
+
+shoppingList.pop();
+console.log(getShoppingListMsg(shoppingList));
