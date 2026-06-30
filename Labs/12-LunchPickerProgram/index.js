@@ -42,13 +42,13 @@ function removeFirstLunch(arr) {
 
 function getRandomLunch(arr) {
   if (arr.length === 0) {
-    console.log("No lunches to select.");
+    console.log("No lunches available.");
     return;
   }
 
   const min = 0,
     max = arr.length - 1;
-  const randomIndex = Math.floor(Math.random() * (max - min)) + min;
+  const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log(`Randomly selected lunch: ${arr[randomIndex]}`);
   return arr;
 }
@@ -59,7 +59,7 @@ function showLunchMenu(arr) {
     return;
   }
 
-  console.log(`Menu items: ${arr}`);
+  console.log(`Menu items: ${arr.join(", ")}`);
   return arr;
 }
 
@@ -74,24 +74,23 @@ showLunchMenu(lunches);
 
 // Valid data.
 console.log("---------- Valid Data ------------");
-let data = addLunchToEnd(lunches, "Sandwiches");
+let data = addLunchToEnd(lunches, "Beans");
 console.log(data);
-data = addLunchToEnd(lunches, "Soups");
+data = addLunchToEnd(lunches, "Pizza");
 console.log(data);
-data = addLunchToEnd(lunches, "Veggies");
+data = addLunchToEnd(lunches, "Sushi");
 console.log(data);
-data = addLunchToStart(lunches, "Salads");
+data = addLunchToStart(lunches, "Corns");
 console.log(data);
-data = addLunchToStart(lunches, "Grain bowls");
+data = addLunchToStart(lunches, "Greens");
 console.log(data);
-data = addLunchToStart(lunches, "Pizza");
+data = addLunchToStart(lunches, "Burger");
 console.log(data);
 
 data = removeFirstLunch(lunches);
 console.log(data);
 data = removeLastLunch(lunches);
 console.log(data);
-data = getRandomLunch(lunches);
-console.log(data);
+getRandomLunch(lunches);
 data = showLunchMenu(lunches);
 console.log(data);
