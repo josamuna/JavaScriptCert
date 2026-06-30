@@ -23,6 +23,7 @@ function addLunchToStart(arr, strValue) {
 function removeLastLunch(arr) {
   if (arr.length === 0) {
     console.log("No lunches to remove.");
+    return;
   }
   const removedItem = arr.pop();
   console.log(`${removedItem} removed from the end of the lunch menu.`);
