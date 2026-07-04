@@ -9,3 +9,15 @@ const elephant = {
   age: 10,
   isEndangered: true,
 };
+
+const getSpecies = (animal) => {
+  return animal.species;
+};
+
+console.log(getSpecies(tiger));
+
+const getAge = (animal) => {
+  return animal.age;
+};
+
+console.log(getAge(tiger));
