@@ -17,6 +17,7 @@ This is a journey of learning to gain a Javascript certification on freeCodeCamp
 - [x] 11. TruncateStringAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/11-TruncateStringAlgorithm)
 - [x] 12. LunchPickerProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/12-LunchPickerProgram)
 - [x] 13. GolfScoreTranslator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/13-GolfScoreTranslator)
+- [ ] 14. QuizGame - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/14-QuizGame)
 
 ## Workshop
 
