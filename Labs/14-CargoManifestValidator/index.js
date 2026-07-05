@@ -17,7 +17,7 @@ function normalizeUnits(manifest) {
       };
     }
   }
-  return manifest;
+  return { ...manifest };
 }
 
 function validateManifest(manifest) {}
