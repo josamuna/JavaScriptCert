@@ -22,6 +22,19 @@ function normalizeUnits(manifest) {
 
 function validateManifest(manifest) {
   if (
+    // All missing properties except containedId, weight and unit.
+    !Object.hasOwn(manifest, "containerId") &&
+    Object.hasOwn(manifest, "destination") &&
+    !Object.hasOwn(manifest, "weight") &&
+    !Object.hasOwn(manifest, "unit") &&
+    Object.hasOwn(manifest, "hazmat")
+  ) {
+    return {
+      containerId: "Missing",
+      weight: "Missing",
+      unit: "Missing",
+    };
+  } else if (
     // All missing properties except destination.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
@@ -151,11 +164,24 @@ function validateManifest(manifest) {
     /*
         Missing properties: unit and hazmat.
 
+        1. Invalid containerId containerId <= 0.
+        2. Invalid weight (NaN).
+        */
+    if (manifest.containerId < 0 && Number.isNaN(manifest.weight)) {
+      return {
+        containerId: "Invalid",
+        weight: "Invalid",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    } else if (
+      /*
+        Missing properties: unit and hazmat.
+
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
         */
-    if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
         manifest.containerId <= 0 ||
@@ -274,7 +300,22 @@ function validateManifest(manifest) {
   }
 }
 
-function processManifest(manifest) {}
+function processManifest(manifest) {
+  const manifestResult = validateManifest(manifest);
+  if (
+    Object.keys(manifestResult).length === 0 &&
+    manifestResult.constructor === Object
+  ) {
+    // Valid manifest.
+    const containerId = manifest.containerId;
+    console.log(`Validation success: ${containerId}`);
+    console.log(`Total weight: ${normalizeUnits(manifest).weight} kg`);
+  } else {
+    // Invalid manifest.
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(manifestResult);
+  }
+}
 
 // Invalid inputs.
 let manifest = {
@@ -339,7 +380,7 @@ manifest = {
 
 console.log(normalizeUnits(manifest));
 
-console.log("=============== validateManifest===============");
+console.log("=============== validateManifest ===============");
 
 manifest = {
   containerId: 1,
@@ -390,3 +431,23 @@ console.log(validateManifest(manifest));
 manifest = { weight: NaN };
 
 console.log(validateManifest(manifest));
+
+console.log("=============== processManifest ===============");
+
+manifest = {
+  containerId: 55,
+  destination: "Carmel",
+  weight: 400,
+  unit: "lb",
+  hazmat: false,
+};
+
+processManifest(manifest);
+
+manifest = { containerId: -88, destination: "Soledad", weight: NaN };
+
+processManifest(manifest);
+
+manifest = { destination: "Watsonville", hazmat: true };
+
+processManifest(manifest);
