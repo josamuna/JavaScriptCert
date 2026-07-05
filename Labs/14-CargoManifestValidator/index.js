@@ -43,14 +43,33 @@ function validateManifest(manifest) {
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
-    // Missing properties: destination, weight, unit and hazmat.
-    return {
-      containerId: manifest.containerId,
-      destination: "Missing",
-      weight: "Missing",
-      unit: "Missing",
-      hazmat: "Missing",
-    };
+    /*
+        Missing properties: destination, weight, unit and hazmat.
+        1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
+        */
+    if (
+      Number.isNaN(manifest.containerId) ||
+      manifest.containerId !== null ||
+      typeof manifest.containerId !== "number" ||
+      manifest.containerId <= 0 ||
+      !Number.isInteger(manifest.containerId)
+    ) {
+      return {
+        containerId: "Invalid",
+        destination: "Missing",
+        weight: "Missing",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    } else {
+      return {
+        containerId: manifest.containerId,
+        destination: "Missing",
+        weight: "Missing",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    }
   } else if (
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
@@ -58,14 +77,38 @@ function validateManifest(manifest) {
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
-    // Missing properties: weight, unit and hazmat.
-    return {
-      containerId: manifest.containerId,
-      destination: manifest.destination,
-      weight: "Missing",
-      unit: "Missing",
-      hazmat: "Missing",
-    };
+    /*
+        Missing properties: weight, unit and hazmat.
+
+        1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
+        2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
+        */
+    if (
+      (Number.isNaN(manifest.containerId) ||
+        manifest.containerId !== null ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
+      (!manifest.destination ||
+        manifest.destination.toString().trim() === "" ||
+        typeof manifest.destination !== "string")
+    ) {
+      return {
+        containerId: "Invalid",
+        destination: "Invalid",
+        weight: "Missing",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    } else {
+      return {
+        containerId: manifest.containerId,
+        destination: manifest.destination,
+        weight: "Missing",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    }
   } else if (
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
@@ -73,14 +116,42 @@ function validateManifest(manifest) {
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
-    // Missing properties: unit and hazmat.
-    return {
-      containerId: manifest.containerId,
-      destination: manifest.destination,
-      weight: manifest.weight,
-      unit: "Missing",
-      hazmat: "Missing",
-    };
+    /*
+        Missing properties: unit and hazmat.
+
+        1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
+        2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
+        3. Invalid weight (string, null, undefined or NaN), weight <= 0.
+        */
+    if (
+      (Number.isNaN(manifest.containerId) ||
+        manifest.containerId !== null ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
+      (!manifest.destination ||
+        manifest.destination.toString().trim() === "" ||
+        typeof manifest.destination !== "string") &&
+      (Number.isNaN(manifest.weight) ||
+        typeof manifest.weight !== "number" ||
+        manifest.weight <= 0)
+    ) {
+      return {
+        containerId: "Invalid",
+        destination: "Invalid",
+        weight: "Invalid",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    } else {
+      return {
+        containerId: manifest.containerId,
+        destination: manifest.destination,
+        weight: manifest.weight,
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    }
   } else if (
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
@@ -88,14 +159,46 @@ function validateManifest(manifest) {
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
-    // Missing properties: hazmat.
-    return {
-      containerId: manifest.containerId,
-      destination: manifest.destination,
-      weight: manifest.weight,
-      unit: manifest.unit,
-      hazmat: "Missing",
-    };
+    /*
+        Missing properties: hazmat.
+
+        1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
+        2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
+        3. Invalid weight (string, null, undefined or NaN), weight <= 0.
+        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb or not kg).
+        */
+    if (
+      ((Number.isNaN(manifest.containerId) ||
+        manifest.containerId !== null ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
+        (!manifest.destination ||
+          manifest.destination.toString().trim() === "" ||
+          typeof manifest.destination !== "string") &&
+        (Number.isNaN(manifest.weight) ||
+          typeof manifest.weight !== "number" ||
+          manifest.weight <= 0) &&
+        !manifest.unit) ||
+      manifest.unit !== "lb" ||
+      manifest.unit !== "kg"
+    ) {
+      return {
+        containerId: "Invalid",
+        destination: "Invalid",
+        weight: "Invalid",
+        unit: "Invalid",
+        hazmat: "Missing",
+      };
+    } else {
+      return {
+        containerId: manifest.containerId,
+        destination: manifest.destination,
+        weight: manifest.weight,
+        unit: manifest.unit,
+        hazmat: "Missing",
+      };
+    }
   } else if (
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
@@ -105,120 +208,39 @@ function validateManifest(manifest) {
   ) {
     // No missing properties.
     //Checking for the validity of property before returning the value.
-
+    // All invalid properties
     if (
-      Number.isNaN(manifest.containerId) ||
-      typeof manifest.containerId !== "number"
+      ((Number.isNaN(manifest.containerId) ||
+        manifest.containerId !== null ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
+        (!manifest.destination ||
+          manifest.destination.toString().trim() === "" ||
+          typeof manifest.destination !== "string") &&
+        (Number.isNaN(manifest.weight) ||
+          typeof manifest.weight !== "number" ||
+          manifest.weight <= 0) &&
+        !manifest.unit) ||
+      ((manifest.unit !== "lb" || manifest.unit !== "kg") &&
+        typeof manifest.hazmat !== "boolean")
     ) {
-      // Invalid containerId (null, undefined, string or NaN).
+      /*
+        1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
+        2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
+        3. Invalid weight (string, null, undefined or NaN), weight <= 0.
+        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb or not kg).
+        5. Invalid hazmat (not boolean).
+        */
       return {
         containerId: "Invalid",
-        destination: manifest.destination,
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (manifest.containerId <= 0) {
-      // containerId (<= 0).
-      return {
-        containerId: "Invalid",
-        destination: manifest.destination,
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (!Number.isInteger(manifest.containerId)) {
-      // Not reached
-      // containerId not Integer but Floating point.
-      return {
-        containerId: "Invalid",
-        destination: manifest.destination,
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (!manifest.destination) {
-      // Invalid destination (empty string, null or undefined).
-      return {
-        containerId: manifest.containedId,
         destination: "Invalid",
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (manifest.destination.trim() === "") {
-      // Not working
-      // Invalid destination (String with spaceat the start of end).
-      return {
-        containerId: manifest.containedId,
-        destination: "Invalid",
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (typeof manifest.destination !== "string") {
-      // Not reached
-      // Invalid destination (Not string).
-      return {
-        containerId: manifest.containedId,
-        destination: "Invalid",
-        weight: manifest.weight,
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (
-      Number.isNaN(manifest.weight) ||
-      typeof manifest.weight !== "number"
-    ) {
-      // Not reached
-      // Invalid weight (string, null, undefined or NaN).
-      return {
-        containerId: manifest.containedId,
-        destination: manifest.destination,
         weight: "Invalid",
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (manifest.weight <= 0) {
-      // Not reached
-      // Invalid weight (<= 0).
-      return {
-        containerId: manifest.containedId,
-        destination: manifest.destination,
-        weight: "Invalid",
-        unit: manifest.unit,
-        hazmat: manifest.hazmat,
-      };
-    } else if (!manifest.unit) {
-      // Invalid unit (empty string, null or undefined).
-      return {
-        containerId: manifest.containedId,
-        destination: manifest.destination.trim,
-        weight: manifest.weight,
         unit: "Invalid",
-        hazmat: manifest.hazmat,
-      };
-    } else if (manifest.unit !== "lb" || manifest.unit !== "kg") {
-      // Not reached
-      // Invalid unit (Not lb or not kg).
-      return {
-        containerId: manifest.containedId,
-        destination: manifest.destination,
-        weight: manifest.weight,
-        unit: "Invalid",
-        hazmat: manifest.hazmat,
-      };
-    } else if (typeof manifest.hazmat !== "boolean") {
-      // Invalid hazmat (not boolean).
-      return {
-        containerId: manifest.containedId,
-        destination: manifest.destination.trim,
-        weight: manifest.weight,
-        unit: manifest.unit,
         hazmat: "Invalid",
       };
     } else {
-      // Valid manifest.
+      // valid manifest
       return {};
     }
   }
@@ -323,11 +345,11 @@ manifest = {
   hazmat: "no",
 };
 
-console.log(validateManifest(manifest)); // Not working
+console.log(validateManifest(manifest));
 
 manifest = { containerId: -2 };
 
-console.log(validateManifest(manifest)); // Not full working
+console.log(validateManifest(manifest));
 
 manifest = { containerId: 3.5 };
 
