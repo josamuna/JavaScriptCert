@@ -111,7 +111,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid unit and haznat.
+      // Valid unit and hazmat.
       return {
         containerId: "Missing",
         destination: "Missing",
@@ -121,13 +121,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except weight.
     !Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except weight.
     if (
       Number.isNaN(manifest.weight) ||
       typeof manifest.weight !== "number" ||
@@ -152,20 +152,20 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except weight and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except weight and hazmat.
     if (
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
       typeof manifest.hazmat !== "boolean"
     ) {
-      // Invalid weight (string, null, undefined or NaN), weight <= 0 and haznat.
+      // Invalid weight (string, null, undefined or NaN), weight <= 0 and hazmat.
       return {
         containerId: "Missing",
         destination: "Missing",
@@ -174,23 +174,23 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid weight and haznat.
+      // Valid weight and hazmat.
       return {
         containerId: "Missing",
         destination: "Missing",
         weight: manifest.weight,
         unit: "Missing",
-        hazmat: manifest.haznat,
+        hazmat: manifest.hazmat,
       };
     }
   } else if (
-    // All missing properties except weight and unit.
     !Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except weight and unit.
     if (
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
@@ -216,13 +216,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except weight, unit and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except weight, unit and hazmat.
     if (
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
@@ -239,7 +239,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid weight, unit and haznat.
+      // Valid weight, unit and hazmat.
       return {
         containerId: "Missing",
         destination: "Missing",
@@ -249,13 +249,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination.
     if (
       !manifest.destination ||
       typeof manifest.destination !== "string" ||
@@ -280,13 +280,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination and hazmat.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -302,7 +302,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid destination and haznat
+      // Valid destination and hazmat
       return {
         containerId: "Missing",
         destination: manifest.destination,
@@ -312,13 +312,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination and unit.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination and unit.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -344,13 +344,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination, unit and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination, unit and hazmat.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -367,7 +367,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid destination, unit and haznat.
+      // Valid destination, unit and hazmat.
       return {
         containerId: "Missing",
         destination: manifest.destination,
@@ -377,13 +377,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination and weight.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination and weight.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -411,13 +411,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination, weight and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination, weight and hazmat.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -436,7 +436,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid destination, weight and haznat.
+      // Valid destination, weight and hazmat.
       return {
         containerId: "Missing",
         destination: manifest.destination,
@@ -446,13 +446,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination, weight and unit.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination, weight and unit.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -482,13 +482,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except destination, weight, unit and haznat.
     !Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except destination, weight, unit and hazmat.
     if (
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
@@ -508,7 +508,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid destination, weight, unit and haznat.
+      // Valid destination, weight, unit and hazmat.
       return {
         containerId: "Missing",
         destination: manifest.destination,
@@ -518,20 +518,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      )
+      Number.isNaN(manifest.containerId) ||
+      typeof manifest.containerId !== "number" ||
+      manifest.containerId <= 0 ||
+      !Number.isInteger(manifest.containerId)
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
       return {
@@ -552,20 +550,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId and hazmat.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point and Invalid hazmat (not boolean).
@@ -577,7 +573,7 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
-      // Valid containerId and haznat.
+      // Valid containerId and hazmat.
       return {
         containerId: manifest.containerId,
         destination: "Missing",
@@ -587,20 +583,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId and unit.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId and unit.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point and Invalid unit (empty string, null or undefined, Not lb or not kg).
@@ -622,20 +616,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, unit and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, unit and hazmat.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
       typeof manifest.hazmat !== "boolean"
     ) {
@@ -658,20 +650,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId and weight.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId and weight.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0)
@@ -695,20 +685,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, weight and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, weight and hazmat.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
@@ -733,20 +721,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, weight and unit.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, weight and unit.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
@@ -771,20 +757,18 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, weight, unit and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     !Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, weight, unit and hazmat.
     if (
-      Number.isNaN(
-        manifest.containerId ||
-          typeof manifest.containerId !== "number" ||
-          manifest.containerId <= 0 ||
-          !Number.isInteger(manifest.containerId),
-      ) &&
+      (Number.isNaN(manifest.containerId) ||
+        typeof manifest.containerId !== "number" ||
+        manifest.containerId <= 0 ||
+        !Number.isInteger(manifest.containerId)) &&
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
@@ -810,13 +794,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId and destination.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId and destination.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -843,13 +827,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination and hazmat.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -877,13 +861,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination and unit.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination and unit.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -911,13 +895,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination, unit and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     !Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination, unit and hazmat.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -946,13 +930,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination and weight.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination and weight.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -982,13 +966,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination, weight and hazmat.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     !Object.hasOwn(manifest, "unit") &&
     Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination, weight and hazmat.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
@@ -1019,13 +1003,13 @@ function validateManifest(manifest) {
       };
     }
   } else if (
-    // All missing properties except containerId, destination, weight and unit.
     Object.hasOwn(manifest, "containerId") &&
     Object.hasOwn(manifest, "destination") &&
     Object.hasOwn(manifest, "weight") &&
     Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
+    // All missing properties except containerId, destination, weight and unit.
     if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
