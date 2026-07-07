@@ -71,7 +71,7 @@ function validateManifest(manifest) {
     !Object.hasOwn(manifest, "hazmat")
   ) {
     // All missing properties except unit.
-    if (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") {
+    if (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) {
       // Invalid unit.
       return {
         containerId: "Missing",
@@ -99,7 +99,7 @@ function validateManifest(manifest) {
   ) {
     // All missing properties except unit and hazmat.
     if (
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid unit and hazmat.
@@ -195,7 +195,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid weight (string, null, undefined or NaN), weight <= 0 and Invalid unit (empty string, null or undefined, Not lb or not kg).
       return {
@@ -227,7 +227,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid weight (string, null, undefined or NaN), weight <= 0, Invalid unit (empty string, null or undefined, Not lb or not kg) and Invalid hazmat (not boolean).
@@ -323,7 +323,7 @@ function validateManifest(manifest) {
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
         manifest.destination.toString().trim() === "") &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string) and Invalid unit (empty string, null or undefined, Not lb or not kg.
       return {
@@ -355,7 +355,7 @@ function validateManifest(manifest) {
       (!manifest.destination ||
         typeof manifest.destination !== "string" ||
         manifest.destination.toString().trim() === "") &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string), Invalid unit ,empty string, null or undefined, Not lb or not kg and Invalid hazmat (not boolean).
@@ -460,7 +460,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string), Invalid weight (string, null, undefined or NaN), weight <= 0 and and Invalid unit (empty string, null or undefined, Not lb or not kg.
@@ -496,7 +496,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string), Invalid weight (string, null, undefined or NaN), weight <= 0, Invalid unit (empty string, null or undefined, Not lb or not kg) and Invalid hazmat (not boolean).
@@ -595,7 +595,7 @@ function validateManifest(manifest) {
         typeof manifest.containerId !== "number" ||
         manifest.containerId <= 0 ||
         !Number.isInteger(manifest.containerId)) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point and Invalid unit (empty string, null or undefined, Not lb or not kg).
       return {
@@ -628,7 +628,7 @@ function validateManifest(manifest) {
         typeof manifest.containerId !== "number" ||
         manifest.containerId <= 0 ||
         !Number.isInteger(manifest.containerId)) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid unit (empty string, null or undefined, Not lb or not kg) and Invalid hazmat (not boolean).
@@ -736,7 +736,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid unit (empty string, null or undefined, Not lb or not kg), Invalid weight (string, null, undefined or NaN), weight <= 0, Invalid unit (empty string, null or undefined, Not lb or not kg).
       return {
@@ -772,7 +772,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid unit (empty string, null or undefined, Not lb or not kg), Invalid weight (string, null, undefined or NaN), weight <= 0, Invalid unit (empty string, null or undefined, Not lb or not kg) and Invalid hazmat (not boolean).
@@ -874,7 +874,7 @@ function validateManifest(manifest) {
         manifest.containerId <= 0 ||
         !Number.isInteger(manifest.containerId)) &&
       (!manifest.destination || typeof manifest.destination !== "string") &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string) and Invalid unit (empty string, null or undefined, Not lb or not kg).
       return {
@@ -908,7 +908,7 @@ function validateManifest(manifest) {
         manifest.containerId <= 0 ||
         !Number.isInteger(manifest.containerId)) &&
       (!manifest.destination || typeof manifest.destination !== "string") &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string), Invalid unit (empty string, null or undefined, Not lb or not kg) and Invalid hazmat (not boolean).
@@ -1019,7 +1019,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg")
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg"))
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string), Invalid weight (string, null, undefined or NaN), weight <= 0 and Invalid unit (empty string, null or undefined, Not lb or not kg).
       return {
@@ -1063,7 +1063,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1092,7 +1092,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1179,7 +1179,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1208,7 +1208,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1295,7 +1295,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1323,7 +1323,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1410,7 +1410,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1439,7 +1439,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1526,7 +1526,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1555,7 +1555,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1642,7 +1642,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1671,7 +1671,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1758,7 +1758,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1787,7 +1787,7 @@ function validateManifest(manifest) {
       (Number.isNaN(manifest.weight) ||
         typeof manifest.weight !== "number" ||
         manifest.weight <= 0) &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1874,7 +1874,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
@@ -1882,7 +1882,7 @@ function validateManifest(manifest) {
         1. Valid containerId.
         2. Valid destination.
         3. Valid weight.
-        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb or not kg).
+        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb and not kg).
         5. Invalid hazmat (not boolean).
         */
       return {
@@ -1903,7 +1903,7 @@ function validateManifest(manifest) {
       !Number.isNaN(manifest.weight) &&
       typeof manifest.weight === "number" &&
       manifest.weight > 0 &&
-      (!manifest.unit || manifest.unit !== "lb" || manifest.unit !== "kg") &&
+      (!manifest.unit || (manifest.unit !== "lb" && manifest.unit !== "kg")) &&
       typeof manifest.hazmat === "boolean"
     ) {
       /*
@@ -1911,7 +1911,7 @@ function validateManifest(manifest) {
         1. Valid containerId.
         2. Valid destination.
         3. Valid weight.
-        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb or not kg).
+        4. Invalid unit (empty string, null or undefined), Invalid unit (Not lb and not kg).
         5. Valid hazmat.
         */
       return {
