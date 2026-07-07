@@ -1976,13 +1976,13 @@ function processManifest(manifest) {
     manifestResult.constructor === Object
   ) {
     // Valid manifest.
-    const containerId = manifest.containerId;
-    console.log(`Validation success: ${containerId}`);
+    //const containerId = manifest.containerId;
+    console.log(`Validation success: ${manifest.containerId}`);
     console.log(`Total weight: ${normalizeUnits(manifest).weight} kg`);
   } else {
     // Invalid manifest.
     console.log(`Validation error: ${manifest.containerId}`);
-    console.log(manifestResult);
+    console.log(validateManifest(manifest));
   }
 }
 
