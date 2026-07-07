@@ -937,16 +937,27 @@ function validateManifest(manifest) {
     !Object.hasOwn(manifest, "unit") &&
     !Object.hasOwn(manifest, "hazmat")
   ) {
-    // All missing properties except containerId, destination and weight.
+    // All missing properties except containerId, destination and weight (Only NaN and containerId < 0).
     if (
+      manifest.containerId < 0 &&
+      manifest.destination &&
+      Number.isNaN(manifest.weight)
+    ) {
+      // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string) and Invalid weight (Only NaN).
+      return {
+        containerId: "Invalid",
+        // destination: "Invalid",
+        weight: "Invalid",
+        unit: "Missing",
+        hazmat: "Missing",
+      };
+    } else if (
       (Number.isNaN(manifest.containerId) ||
         typeof manifest.containerId !== "number" ||
         manifest.containerId <= 0 ||
         !Number.isInteger(manifest.containerId)) &&
       (!manifest.destination || typeof manifest.destination !== "string") &&
-      (Number.isNaN(manifest.weight) ||
-        typeof manifest.weight !== "number" ||
-        manifest.weight <= 0)
+      (typeof manifest.weight !== "number" || manifest.weight <= 0)
     ) {
       // Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point,  Invalid destination (empty string, null, undefined, with empty spaces at the start of end or not string) and Invalid weight (string, null, undefined or NaN), weight <= 0.
       return {
@@ -1068,7 +1079,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1155,7 +1166,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1184,7 +1195,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Valid weight.
@@ -1213,7 +1224,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Valid weight.
@@ -1242,7 +1253,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Valid weight.
@@ -1271,7 +1282,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Valid weight.
@@ -1300,7 +1311,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1328,7 +1339,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1357,7 +1368,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1386,7 +1397,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1415,7 +1426,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Valid weight.
@@ -1444,7 +1455,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Valid weight.
@@ -1473,7 +1484,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Valid weight.
@@ -1502,7 +1513,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Invalid containerId (null, undefined, string or NaN), containerId <= 0, containerId not Integer but Floating point.
         2. Valid destination.
         3. Valid weight.
@@ -1531,7 +1542,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Valid containerId.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1560,7 +1571,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat === "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Valid containerId.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1589,7 +1600,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Valid containerId.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Invalid weight (string, null, undefined or NaN), weight <= 0.
@@ -1647,7 +1658,7 @@ function validateManifest(manifest) {
       typeof manifest.hazmat !== "boolean"
     ) {
       /*
-        All invalid properties.
+        Some invalid properties.
         1. Valid containerId.
         2. Invalid destination (empty string, null or undefined), destination is a string with space at the start of end, destination not string.
         3. Valid weight.
