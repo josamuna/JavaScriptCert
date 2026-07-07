@@ -302,13 +302,14 @@ function validateManifest(manifest) {
         hazmat: "Invalid",
       };
     } else {
+      // For this case, the returned value should only include containerId, weight and unit only as suggest.
       // Valid destination and hazmat
       return {
         containerId: "Missing",
-        destination: manifest.destination,
+        //destination: manifest.destination,
         weight: "Missing",
         unit: "Missing",
-        hazmat: manifest.hazmat,
+        //hazmat: manifest.hazmat,
       };
     }
   } else if (
