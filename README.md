@@ -18,6 +18,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 12. LunchPickerProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/12-LunchPickerProgram)
 - [x] 13. GolfScoreTranslator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/13-GolfScoreTranslator)
 - [x] 14. CargoManifestValidator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/14-CargoManifestValidator)
+- [ ] 15. QuizGame - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/15-QuizGame)
 
 ## Workshop
 
