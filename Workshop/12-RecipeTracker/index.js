@@ -30,11 +30,18 @@ const recipe3 = {
   difficultyLevel: "",
 };
 
-const recipe1Name = recipe1.name;
-console.log(recipe1Name);
+recipes.push(recipe1, recipe2, recipe3);
 
-const recipe2CookingTime = recipe2.cookingTime;
-console.log(recipe2CookingTime);
+function getTotalIngredients(ingredients) {
+  return ingredients.length;
+}
 
-const recipe3Ingredients = recipe3.ingredients;
-console.log(recipe3Ingredients);
+function getDifficultyLevel(cookingTime) {
+  if (cookingTime <= 30) {
+    return "easy";
+  } else if (cookingTime <= 60) {
+    return "medium";
+  } else {
+    return "hard";
+  }
+}
