@@ -8,7 +8,7 @@ const questions = [
       "C. A database management system.",
     ],
     answer:
-      "B. A high-level programming language used to create interactive web applications. ✅",
+      "B. A high-level programming language used to create interactive web applications.",
   },
   {
     category: "Question 2.",
@@ -19,13 +19,13 @@ const questions = [
       "C. In web browsers and on servers using environments like Node.js.",
     ],
     answer:
-      "C. In web browsers and on servers using environments like Node.js. ✅",
+      "C. In web browsers and on servers using environments like Node.js.",
   },
   {
     category: "Question 3.",
     question: "Which of the following is a primitive data type in JavaScript?",
     choices: ["A. Array", "B. Object", "C. Boolean"],
-    answer: "C. Boolean ✅",
+    answer: "C. Boolean",
   },
   {
     category: "Question 4.",
@@ -36,7 +36,7 @@ const questions = [
       "C. null is used only for numbers.",
     ],
     answer:
-      "A. undefined means a variable has no assigned value, while null represents an intentional absence of value. ✅",
+      "A. undefined means a variable has no assigned value, while null represents an intentional absence of value.",
   },
   {
     category: "Question 5.",
@@ -46,14 +46,14 @@ const questions = [
       "B. A function that executes automatically.",
       "C. A special type of loop.",
     ],
-    answer: "A. A collection of key-value pairs used to store related data. ✅",
+    answer: "A. A collection of key-value pairs used to store related data.",
   },
   {
     category: "Question 6.",
     question:
       "Which statement correctly accesses the name property of the user object?",
-    choices: ["A. user->name", "B. user.name ✅", "C. user:name"],
-    answer: "B. user.name ✅",
+    choices: ["A. user->name", "B. user.name", "C. user:name"],
+    answer: "B. user.name",
   },
   {
     category: "Question 7.",
@@ -64,7 +64,7 @@ const questions = [
       "B. person.age = 30;",
       "C. person:add(age, 30);",
     ],
-    answer: "B. person.age = 30; ✅",
+    answer: "B. person.age = 30;",
   },
   {
     category: "Question 8.",
@@ -74,7 +74,7 @@ const questions = [
       "B. JavaScript Object Network.",
       "C. JavaScript Object Notation.",
     ],
-    answer: "C. JavaScript Object Notation. ✅",
+    answer: "C. JavaScript Object Notation.",
   },
   {
     category: "Question 9.",
@@ -85,26 +85,41 @@ const questions = [
       "C. JSON allows comments and trailing commas.",
     ],
     answer:
-      "B. JSON is a text format used to exchange data and does not support functions. ✅",
+      "B. JSON is a text format used to exchange data and does not support functions.",
   },
   {
     category: "Question 10.",
     question: "Which JavaScript method converts an object into a JSON string?",
     choices: ["A. JSON.parse()", "B. JSON.stringify()", "C. JSON.convert()"],
-    answer: "B. JSON.stringify() ✅",
+    answer: "B. JSON.stringify()",
   },
 ];
 
+// Return a random question fromthe array passed as parameter.
 function getRandomQuestion(questions) {
-  let question;
-  return question;
+  if (!questions) {
+    return;
+  }
+
+  if (questions.length === 0) {
+    return;
+  }
+
+  const min = 0,
+    max = questions.length - 1;
+  // generate a random number between min and max treshold.
+  const random = Math.floor(Math.random() * (max - min) + 1) + min;
+  // Return a question according to the selected question
+  return questions[random];
 }
 
+// Return a random answer to the selected question from the choices passed as parameter.
 function getRandomComputerChoice(choices) {
   let randomAnswer;
   return randomAnswer;
 }
 
+// Gives the answer to the question by telling the right one when a wrong is provided.
 function getResults(questions, computerChoice) {
   if (questions) {
     return "The computer's choice is correct!";
@@ -112,3 +127,13 @@ function getResults(questions, computerChoice) {
     return `The computer's choice is wrong. The correct answer is: ${computerChoice}`;
   }
 }
+
+// Invalid inputs.
+let question = getRandomQuestion(null);
+console.log(question);
+question = getRandomQuestion([]);
+console.log(question);
+
+// Valid input;
+question = getRandomQuestion(questions);
+console.log(question);
