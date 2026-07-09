@@ -73,4 +73,4 @@ console.log(recipes);
 
 ## Output
 
-![Image](https://github.com/user-attachments/assets/994f6238-0249-4b6c-ae64-04f92d124855)
+![Image](https://github.com/user-attachments/assets/1a39a318-cc07-4f8f-abd8-42f71aa094fe)
