@@ -98,10 +98,12 @@ const questions = [
 // Return a random question fromthe array passed as parameter.
 function getRandomQuestion(questions) {
   if (!questions) {
+    // Invalid array.
     return;
   }
 
   if (questions.length === 0) {
+    // Empty array.
     return;
   }
 
@@ -109,14 +111,28 @@ function getRandomQuestion(questions) {
     max = questions.length - 1;
   // generate a random number between min and max treshold.
   const random = Math.floor(Math.random() * (max - min) + 1) + min;
-  // Return a question according to the selected question
+  // Return a question according to the selected question.
   return questions[random];
 }
 
 // Return a random answer to the selected question from the choices passed as parameter.
 function getRandomComputerChoice(choices) {
-  let randomAnswer;
-  return randomAnswer;
+  if (!choices) {
+    // Invalid array.
+    return;
+  }
+
+  if (choices.length === 0) {
+    // Empty array.
+    return;
+  }
+
+  const min = 0,
+    max = choices.length - 1;
+  // generate a random number between min and max treshold.
+  const random = Math.floor(Math.random() * (max - min) + 1) + min;
+  // Return a random answer according to the selected choice.
+  return choices[random];
 }
 
 // Gives the answer to the question by telling the right one when a wrong is provided.
@@ -130,10 +146,20 @@ function getResults(questions, computerChoice) {
 
 // Invalid inputs.
 let question = getRandomQuestion(null);
-console.log(question);
+console.log(question); // undefined.
 question = getRandomQuestion([]);
-console.log(question);
+console.log(question); // undefined.
 
 // Valid input;
 question = getRandomQuestion(questions);
 console.log(question);
+
+// Invalid inputs.
+let answer = getRandomComputerChoice(null);
+console.log(answer); // undefined.
+answer = getRandomComputerChoice([]);
+console.log(answer); // undefined.
+
+// Valid input;
+answer = getRandomComputerChoice(questions[5].choices);
+console.log(answer);
