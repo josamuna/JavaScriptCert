@@ -137,12 +137,12 @@ function getRandomComputerChoice(choices) {
 
 // Gives the answer to the question by telling the right one when a wrong is provided.
 function getResults(question, computerChoice) {
-  if (
-    Object.keys(question).length === 0 ||
-    !computerChoice ||
-    computerChoice.trim() === ""
-  ) {
-    // mpty Object or invalid computer choice (String input).
+  if (!question || Object.keys(question).length === 0) {
+    // Null or empty Object
+    return;
+  }
+  if (!computerChoice || computerChoice.trim() === "") {
+    // Invalid computer choice (String input).
     return;
   }
 
@@ -153,25 +153,32 @@ function getResults(question, computerChoice) {
   }
 }
 
-// Invalid inputs.
+console.log("------------------ Invalid inputs -----------");
 let question = getRandomQuestion(null);
 console.log(question); // undefined.
+
+let answer = getRandomComputerChoice(null);
+console.log(answer); // undefined.
+
+let result = getResults(question, answer);
+console.log(result); // undefined.
+
 question = getRandomQuestion([]);
 console.log(question); // undefined.
 
-// Valid input;
-question = getRandomQuestion(questions);
-console.log(question);
-
-// Invalid inputs.
-let answer = getRandomComputerChoice(null);
-console.log(answer); // undefined.
 answer = getRandomComputerChoice([]);
 console.log(answer); // undefined.
 
-// Valid input;
-answer = getRandomComputerChoice(questions[5].choices);
-console.log(answer);
+result = getResults(question, answer);
+console.log(result); // undefined.
 
-const result = getResults(question, answer);
-console.log(result);
+console.log("------------------ Valid inputs --------------");
+question = getRandomQuestion(questions);
+console.log("QUESTION:\n========");
+console.log(question);
+
+answer = getRandomComputerChoice(questions[5].choices);
+console.log(`COMPUTER CHOICE ANSWER:\n======================\n${answer}`);
+
+result = getResults(question, answer);
+console.log(`RESULT:\n======\n${result}`);
