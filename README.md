@@ -19,6 +19,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 13. GolfScoreTranslator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/13-GolfScoreTranslator)
 - [x] 14. CargoManifestValidator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/14-CargoManifestValidator)
 - [x] 15. QuizGame - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/15-QuizGame)
+- [ ] 16. RecordCollection - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/16-RecordCollection)
 
 ## Workshop
 
