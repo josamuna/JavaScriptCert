@@ -136,11 +136,20 @@ function getRandomComputerChoice(choices) {
 }
 
 // Gives the answer to the question by telling the right one when a wrong is provided.
-function getResults(questions, computerChoice) {
-  if (questions) {
+function getResults(question, computerChoice) {
+  if (
+    Object.keys(question).length === 0 ||
+    !computerChoice ||
+    computerChoice.trim() === ""
+  ) {
+    // mpty Object or invalid computer choice (String input).
+    return;
+  }
+
+  if (computerChoice === question.answer) {
     return "The computer's choice is correct!";
   } else {
-    return `The computer's choice is wrong. The correct answer is: ${computerChoice}`;
+    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
   }
 }
 
@@ -163,3 +172,6 @@ console.log(answer); // undefined.
 // Valid input;
 answer = getRandomComputerChoice(questions[5].choices);
 console.log(answer);
+
+const result = getResults(question, answer);
+console.log(result);
