@@ -25,36 +25,36 @@ function updateRecords(records, id, prop, value) {
   } else if (prop !== "tracks") {
     records[id][prop] = value;
   } else {
-    if (!Object.hasOwn(records, "tracks")) {
-      records[id].tracks = value;
-    } else {
-      records[id].tracks.push(value);
+    if (!Object.hasOwn(records[id], "tracks")) {
+      records[id].tracks = [];
     }
+
+    records[id].tracks.push(value);
   }
 
   return records;
 }
 
 let result = updateRecords(recordCollection, 2468, "tracks", null);
-// console.log(result);
+console.log(result);
 
 result = updateRecords(recordCollection, 1245, "tracks", "ABBA");
-// console.log(result);
+console.log(result);
 
 result = updateRecords(recordCollection, 5439, "tracks", "ABBA");
-// console.log(result);
+console.log(result);
 
 result = updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me");
 console.log(result);
 
 result = updateRecords(recordCollection, 2548, "artist", "");
-// console.log(result);
+console.log(result);
 
 result = updateRecords(recordCollection, 1245, "tracks", "Addicted to Love");
 console.log(result);
 
 result = updateRecords(recordCollection, 2468, "tracks", "Free");
-// console.log(result);
+console.log(result);
 
 result = updateRecords(recordCollection, 2548, "tracks", "");
-// console.log(result);
+console.log(result);
