@@ -3,3 +3,4 @@ function printCharacters(str) {
     console.log(char);
   }
 }
+printCharacters("hello");
