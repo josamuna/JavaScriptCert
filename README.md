@@ -35,7 +35,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 10. ShoppingList - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/10-ShoppingList)
 - [x] 11. WildlifeTracker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/11-WildlifeTracker)
 - [x] 12. RecipeTracker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/12-RecipeTracker)
-- [ ] 13. WordCounter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/13-WordCounter)
+- [x] 13. WordCounter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/13-WordCounter)
 
 ## Certification Projects
 

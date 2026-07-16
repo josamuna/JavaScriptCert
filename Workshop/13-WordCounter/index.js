@@ -26,3 +26,7 @@ console.log(
     "really",
   ),
 );
+
+console.log(
+  getMatchedWordCount(["Do", "not", "fear", "the", "dandy", "lion"], "dandy"),
+);
