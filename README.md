@@ -20,6 +20,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 14. CargoManifestValidator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/14-CargoManifestValidator)
 - [x] 15. QuizGame - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/15-QuizGame)
 - [x] 16. RecordCollection - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/16-RecordCollection)
+- [ ] 17. TrafficLightSequencer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/17-TrafficLightSequencer)
 
 ## Workshop
 
