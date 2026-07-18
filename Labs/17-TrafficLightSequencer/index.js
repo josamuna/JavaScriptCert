@@ -31,64 +31,40 @@ const config4 = {
 };
 
 function runSequence(config, cycles) {
-  for (const conf in config) {
-    if (conf === "phases") {
-      if (config[conf].length === 0) {
-        console.log("No phases found");
-        return;
+  if (config.phases.length === 0) {
+    console.log("No phases found");
+    return;
+  }
+
+  if (config.fault) {
+    console.log("Faulted phase!");
+    return;
+  }
+
+  for (let i = 0; i < cycles; i++) {
+    for (const phase of config.phases) {
+      if (phase.duration <= 0) {
+        console.log("Invalid phase detected");
       } else {
-        for (let i = 0; i < cycles; i++) {
-          for (let j = 0; j < config[conf].length; j++) {
-            if (config[conf][j].duration <= 0) {
-              console.log("Invalid phase detected");
-              continue;
-            } else {
-              console.log(
-                `Switching to ${config[conf][j].color} for ${config[conf][j].duration} s`,
-              );
-            }
-          }
-        }
-      }
-    } else {
-      if (config[conf]) {
-        console.log("Faulted phase!");
-        break;
+        console.log(`Switching to ${phase.color} for ${phase.duration} s`);
       }
     }
   }
 }
 
 function generateTimeline(config, cycles) {
-  let arr = [];
-  for (const conf in config) {
-    if (conf === "phases") {
-      if (config[conf].length === 0) {
-        return [];
-      } else {
-        let sum = 0;
-        const size = config[conf].length;
-        for (let i = 0; i < cycles; i++) {
-          for (let j = 0; j < size; j++) {
-            sum += config[conf][j].duration; // Computing sum
-            if (i === 0 && j === 0) {
-              // First cycle and first array index
-              arr.push(config[conf][j].duration);
-            } else {
-              arr.push(sum);
-            }
-          }
-        }
-      }
+  const arr = [];
+  let sum = 0;
+  for (let i = 0; i < cycles; i++) {
+    for (const phase of config.phases) {
+      sum += phase.duration; // Computing sum
+      arr.push(sum);
     }
-    /* else {
-      if (config[conf]) {
-        return [];
-      }
-    }*/
   }
   return arr;
 }
+
+// TO PASS THE CHALLENGE, THIS BELLOW LIGNES SHOULD BE REMOVED. THEY ARE USED ONLY FOR TESTING PURPOSE.
 
 /*
   Switching to green for 5 s
