@@ -59,24 +59,73 @@ function runSequence(config, cycles) {
   }
 }
 
-function generateTimeline(config, cycles) {}
+function generateTimeline(config, cycles) {
+  let arr = [];
+  for (const conf in config) {
+    if (conf === "phases") {
+      if (config[conf].length === 0) {
+        return [];
+      } else {
+        let sum = 0;
+        const size = config[conf].length;
+        for (let i = 0; i < cycles; i++) {
+          for (let j = 0; j < size; j++) {
+            sum += config[conf][j].duration; // Computing sum
+            if (i === 0 && j === 0) {
+              // First cycle and first array index
+              arr.push(config[conf][j].duration);
+            } else {
+              arr.push(sum);
+            }
+          }
+        }
+      }
+    }
+    /* else {
+      if (config[conf]) {
+        return [];
+      }
+    }*/
+  }
+  return arr;
+}
 
-console.log("-----------1-----------------");
-
+/*
+  Switching to green for 5 s
+  Switching to yellow for 2 s
+  Switching to red for 4 s
+*/
 runSequence(config1, 1);
 
-console.log("------------2----------------");
-
+/*
+  Switching to green for 5 s
+  Switching to yellow for 2 s
+  Switching to red for 4 s
+  Switching to green for 5 s
+  Switching to yellow for 2 s
+  Switching to red for 4 s
+*/
 runSequence(config1, 2);
 
-console.log("-------------3---------------");
-
+/*
+  Switching to red for 3 s
+  Invalid phase detected
+  Switching to green for 6 s
+*/
 runSequence(config2, 1);
 
-console.log("-------------4---------------");
-
+// Faulted phase!
 runSequence(config3, 2);
 
-console.log("-------------5---------------");
-
+// No phases found
 runSequence(config4, 5);
+
+console.log(generateTimeline(config1, 1)); // [5, 7, 11]
+
+console.log(generateTimeline(config1, 2)); // [5, 7, 11, 16, 18, 22]
+
+console.log(generateTimeline(config2, 2)); // [3, 1, 7, 10, 8, 14]
+
+console.log(generateTimeline(config3, 1)); // [5, 7, 13]
+
+console.log(generateTimeline(config4, 1)); // []
