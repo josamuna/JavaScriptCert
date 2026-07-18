@@ -38,6 +38,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 12. RecipeTracker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/12-RecipeTracker)
 - [x] 13. WordCounter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/13-WordCounter)
 - [x] 14. SentenceAnalyzer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/14-SentenceAnalyzer)
+- [ ] 15. SpaceMissionRoster - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/15-SpaceMissionRoster)
 
 ## Certification Projects
 
