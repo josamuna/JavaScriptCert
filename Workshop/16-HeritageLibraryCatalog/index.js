@@ -36,10 +36,10 @@ function parseCard(rawString) {
   const year = trimmedParts[2];
   const location = trimmedParts[3];
   return {
-    title: title,
-    author: author,
-    year: year,
-    location: location,
+    title: title || "Unknown",
+    author: author || "Unknown",
+    year: year ? parseInt(year) : "Unknown",
+    location: location || "Unknown",
   };
 }
 
