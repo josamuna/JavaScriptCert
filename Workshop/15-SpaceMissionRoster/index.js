@@ -93,11 +93,24 @@ function swapCrewMembers(crew, fromIndex, toIndex) {
 
 const updatedSquad = swapCrewMembers(squad, 2, 5);
 
+function sortByPriorityDescending(crew) {
+  for (let i = 0; i < crew.length - 1; i++) {
+    for (let j = 0; j < crew.length - 1 - i; j++) {
+      if (crew[j].priority < crew[j + 1].priority) {
+        const temp = crew[j];
+        crew[j] = crew[j + 1];
+        crew[j + 1] = temp;
+      }
+    }
+  }
+}
+
 function getEVAReadyCrew(crew) {
   const eligible = [];
   for (const astronaut of crew) {
     if (astronaut.isEVAEligible) eligible.push(astronaut);
   }
+  sortByPriorityDescending(eligible);
 
   return eligible;
 }
