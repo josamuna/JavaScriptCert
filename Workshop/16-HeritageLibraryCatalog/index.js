@@ -58,10 +58,14 @@ function findByAuthor(catalog, author) {
   const results = [];
   for (let i = 0; i < catalog.length; i++) {
     if (catalog[i].author.toLowerCase().includes(searchTerm)) {
-      results.push(catalog[i].author);
+      results.push(catalog[i]);
     }
   }
   return results;
 }
 
-console.log(findByAuthor(catalog, "king").length);
+const kingBooks = findByAuthor(catalog, "king");
+console.log(kingBooks.length);
+for (let i = 0; i < kingBooks.length; i++) {
+  console.log(`${kingBooks[i].title} (${kingBooks[i].year})`);
+}
