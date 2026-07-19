@@ -87,11 +87,17 @@ function swapCrewMembers(crew, fromIndex, toIndex) {
     1,
     updatedCrew[fromIndex],
   )[0];
-  for (let i = 0; i < updatedCrew.length; i++) {
-    console.log(updatedCrew[i].name);
-  }
 
   return updatedCrew;
 }
 
 const updatedSquad = swapCrewMembers(squad, 2, 5);
+
+function getEVAReadyCrew(crew) {
+  const eligible = [];
+  for (const astronaut of crew) {
+    if (astronaut.isEVAEligible) eligible.push(astronaut);
+  }
+
+  return eligible;
+}
