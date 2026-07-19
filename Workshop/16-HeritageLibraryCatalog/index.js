@@ -52,3 +52,16 @@ function parseCatalog(rawCards) {
 }
 
 const catalog = parseCatalog(rawCatalogCards);
+
+function findByAuthor(catalog, author) {
+  const searchTerm = author.toLowerCase();
+  const results = [];
+  for (let i = 0; i < catalog.length; i++) {
+    if (catalog[i].author.toLowerCase().includes(searchTerm)) {
+      results.push(catalog[i].author);
+    }
+  }
+  return results;
+}
+
+console.log(findByAuthor(catalog, "king").length);
