@@ -43,5 +43,12 @@ function parseCard(rawString) {
   };
 }
 
-const cardResult = parseCard(rawCatalogCards[2]);
-console.log(cardResult);
+function parseCatalog(rawCards) {
+  const catalog = [];
+  for (let i = 0; i < rawCards.length; i++) {
+    catalog.push(parseCard(rawCards[i]));
+  }
+  return catalog;
+}
+
+const catalog = parseCatalog(rawCatalogCards);
