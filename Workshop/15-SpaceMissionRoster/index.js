@@ -69,3 +69,17 @@ const remainingCrew = [
 for (let i = 0; i < remainingCrew.length; i++) {
   addCrewMember(squad, remainingCrew[i]);
 }
+
+function swapCrewMembers(crew, fromIndex, toIndex) {
+  if (
+    fromIndex < 0 ||
+    toIndex < 0 ||
+    fromIndex >= crew.length ||
+    toIndex >= crew.length
+  ) {
+    console.log("Invalid crew indices");
+    return;
+  }
+
+  const updatedCrew = crew.slice();
+}
