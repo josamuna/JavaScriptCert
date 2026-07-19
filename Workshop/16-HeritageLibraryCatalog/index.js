@@ -24,3 +24,13 @@ const rawCatalogCards = [
   "Mysterious Manuscript | Unknown Author |  | Shelf Z9",
   "Ancient Scroll | Anonymous | 850 | ",
 ];
+
+function parseCard(rawString) {
+  const parts = rawString.split("|");
+  const trimmedParts = [];
+  for (let i = 0; i < parts.length; i++) {}
+  return parts;
+}
+
+const cardResult = parseCard(rawCatalogCards[2]);
+console.log(cardResult);
