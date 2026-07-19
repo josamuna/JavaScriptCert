@@ -31,8 +31,16 @@ function parseCard(rawString) {
   for (let i = 0; i < parts.length; i++) {
     trimmedParts.push(parts[i].trim());
   }
-
-  return trimmedParts;
+  const title = trimmedParts[0];
+  const author = trimmedParts[1];
+  const year = trimmedParts[2];
+  const location = trimmedParts[3];
+  return {
+    title: title,
+    author: author,
+    year: year,
+    location: location,
+  };
 }
 
 const cardResult = parseCard(rawCatalogCards[2]);
