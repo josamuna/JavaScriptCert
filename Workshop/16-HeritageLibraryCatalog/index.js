@@ -124,6 +124,7 @@ function validateEntry(entry) {
 }
 
 function exportToJSON(catalog) {
+  con;
   return JSON.stringify(catalog, null, 2);
 }
 
@@ -144,3 +145,24 @@ function exportToCSV(catalog) {
 }
 
 console.log(exportToCSV(catalog));
+
+console.log(catalog.length);
+console.log(Object.keys(byDecade).length);
+
+let oldestYear = Infinity;
+let newestYear = 0;
+
+for (let i = 0; i < catalog.length; i++) {
+  const entry = catalog[i];
+
+  if (entry.year !== "Unknown") {
+    if (entry.year < newestYear) {
+      oldestYear = entry.year;
+    } else {
+      newestYear = entry.year;
+    }
+  }
+}
+
+console.log(oldestYear);
+console.log(newestYear);
