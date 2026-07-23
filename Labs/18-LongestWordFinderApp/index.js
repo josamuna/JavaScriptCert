@@ -1,5 +1,5 @@
 /*
-    This Lab is abou to build a function that returns the length of the longest word in the provided sentence.
+    This Lab is about to build a function that returns the length of the longest word in the provided sentence.
 */
 
 function findLongestWordLength(str) {
@@ -12,11 +12,10 @@ function findLongestWordLength(str) {
   const strArr = str.toLowerCase().split(" ");
 
   // Order string values descending, then the first element inside the array is the greather string.
-  console.log("Before", strArr);
+  // console.log("Before", strArr);
   const n = strArr.length;
   for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < n - 1 - i; j++) {
-      //console.log(`i = ${i}, j = ${j}, strArr[${i}] = ${strArr[i]}, str[${j}] = ${strArr[j]}`)
       if (strArr[j].length < strArr[j + 1].length) {
         const temp = strArr[j];
         strArr[j] = strArr[j + 1];
@@ -25,7 +24,7 @@ function findLongestWordLength(str) {
     }
   }
 
-  console.log("After", strArr);
+  // console.log("After", strArr);
   return strArr[0].length;
 }
 
@@ -43,4 +42,23 @@ console.log(longestWordLen); // undefined
 longestWordLen = findLongestWordLength(
   "The quick brown fox jumped over the lazy dog",
 );
-console.log(longestWordLen);
+console.log(longestWordLen); // 6
+
+longestWordLen = findLongestWordLength("May the force be with you");
+console.log(longestWordLen); // 5
+
+longestWordLen = findLongestWordLength("Google do a barrel roll");
+console.log(longestWordLen); // 6
+
+longestWordLen = findLongestWordLength("Googling do a barrel roll");
+console.log(longestWordLen); // 8
+
+longestWordLen = findLongestWordLength(
+  "What is the average airspeed velocity of an unladen swallow",
+);
+console.log(longestWordLen); // 8
+
+longestWordLen = findLongestWordLength(
+  "What if we try a super-long word such as otorhinolaryngology",
+);
+console.log(longestWordLen); // 19
