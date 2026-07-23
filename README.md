@@ -21,7 +21,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 15. QuizGame - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/15-QuizGame)
 - [x] 16. RecordCollection - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/16-RecordCollection)
 - [x] 17. TrafficLightSequencer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/17-TrafficLightSequencer)
-- [ ] 18. LongestWordFinderApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/18-LongestWordFinderApp)
+- [x] 18. LongestWordFinderApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/18-LongestWordFinderApp)
 
 ## Workshop
 
