@@ -8,8 +8,25 @@ function findLongestWordLength(str) {
   if (!str || typeof str !== "string") {
     return;
   }
+  // Create an array because string is immutable data type.
+  const strArr = str.toLowerCase().split(" ");
 
-  return longestWordLength;
+  // Order string values descending, then the first element inside the array is the greather string.
+  console.log("Before", strArr);
+  const n = strArr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - 1 - i; j++) {
+      //console.log(`i = ${i}, j = ${j}, strArr[${i}] = ${strArr[i]}, str[${j}] = ${strArr[j]}`)
+      if (strArr[j].length < strArr[j + 1].length) {
+        const temp = strArr[j];
+        strArr[j] = strArr[j + 1];
+        strArr[j + 1] = temp;
+      }
+    }
+  }
+
+  console.log("After", strArr);
+  return strArr[0].length;
 }
 
 // Invalid entries.
