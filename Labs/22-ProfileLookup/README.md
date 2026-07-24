@@ -49,7 +49,7 @@ function lookUpProfile(name, property) {
   // Loop through the array of object and analyze each one.
   for (let i = 0; i < contacts.length; i++) {
     if (contacts[i].firstName === name) {
-      if (!Object.hasOwn(contacts[0], property)) {
+      if (!Object.hasOwn(contacts[i], property)) {
         return "No such property";
       }
       return contacts[i][property];
