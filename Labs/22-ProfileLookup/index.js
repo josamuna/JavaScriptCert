@@ -35,15 +35,41 @@ function lookUpProfile(name, property) {
     return;
   }
 
-  if (!Object.hasOwn(contacts[0], property)) {
+  /*if (!Object.hasOwn(contacts[0], property)) {
     return "No such property";
-  }
+  }*/
 
   // Loop through the array of object and analyze each one.
   for (let i = 0; i < contacts.length; i++) {
-    if (contacts[i][property] === name) {
+    if (contacts[i].firstName === name) {
+      if (!Object.hasOwn(contacts[0], property)) {
+        return "No such property";
+      }
       return contacts[i][property];
     }
   }
   return "No such contact";
 }
+
+// Invalid inputs.
+let outputData = "";
+console.log(outputData);
+
+// Valid inputs.
+outputData = lookUpProfile("Kristian", "lastName");
+console.log(outputData); // Vos
+
+outputData = lookUpProfile("Sherlock", "likes");
+console.log(outputData); // [ 'Intriguing Cases', 'Violin' ]
+
+outputData = lookUpProfile("Harry", "likes");
+console.log(outputData); // [ 'Hogwarts', 'Magic', 'Hagrid' ]
+
+outputData = lookUpProfile("Bob", "number");
+console.log(outputData); // No such contact
+
+outputData = lookUpProfile("Bob", "potato");
+console.log(outputData); // No such contact
+
+outputData = lookUpProfile("Akira", "address");
+console.log(outputData); // No such property
