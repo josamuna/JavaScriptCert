@@ -25,6 +25,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 19. FactorialCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/19-FactorialCalculator)
 - [x] 20. ImplementMutationsAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/20-ImplementMutationsAlgorithm)
 - [x] 21. ChunkyMonkeyAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/21-ChunkyMonkeyAlgorithm)
+- [ ] 22. ProfileLookup - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/22-ProfileLookup)
 
 ## Workshop
 
