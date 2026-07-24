@@ -52,8 +52,20 @@ function lookUpProfile(name, property) {
 }
 
 // Invalid inputs.
-let outputData = "";
-console.log(outputData);
+let outputData = lookUpProfile(null, "lastName");
+console.log(outputData); // undefined
+
+outputData = lookUpProfile(undefined, "lastName");
+console.log(outputData); // undefined
+
+outputData = lookUpProfile("", "lastName");
+console.log(outputData); // undefined
+
+outputData = lookUpProfile(1997, "lastName");
+console.log(outputData); // undefined
+
+outputData = lookUpProfile(null, "salary");
+console.log(outputData); // undefined
 
 // Valid inputs.
 outputData = lookUpProfile("Kristian", "lastName");
