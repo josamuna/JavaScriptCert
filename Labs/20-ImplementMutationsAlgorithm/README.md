@@ -1,6 +1,6 @@
 # ImplementMutationsAlgorithm
 
-Implement MutationsAlgorithm Project.
+Implement Mutations Algorithm Project.
 
 ## Source Code
 

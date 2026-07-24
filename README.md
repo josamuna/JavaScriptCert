@@ -24,6 +24,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 18. LongestWordFinderApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/18-LongestWordFinderApp)
 - [x] 19. FactorialCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/19-FactorialCalculator)
 - [x] 20. ImplementMutationsAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/20-ImplementMutationsAlgorithm)
+- [ ] 201. ChunkyMonkeyAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/21-ChunkyMonkeyAlgorithm)
 
 ## Workshop
 
