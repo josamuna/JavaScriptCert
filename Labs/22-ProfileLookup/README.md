@@ -42,10 +42,6 @@ function lookUpProfile(name, property) {
     return;
   }
 
-  /*if (!Object.hasOwn(contacts[0], property)) {
-    return "No such property";
-  }*/
-
   // Loop through the array of object and analyze each one.
   for (let i = 0; i < contacts.length; i++) {
     if (contacts[i].firstName === name) {
