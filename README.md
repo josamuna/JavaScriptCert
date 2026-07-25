@@ -28,6 +28,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 22. ProfileLookup - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/22-ProfileLookup)
 - [x] 23. StringRepeatingFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/23-StringRepeatingFunction)
 - [x] 24. MissingLetterDetector - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/24-MissingLetterDetector)
+- [ ] 25. SmartPantryRestocker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/25-SmartPantryRestocker)
 
 ## Workshop
 
