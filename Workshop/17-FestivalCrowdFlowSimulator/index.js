@@ -51,3 +51,10 @@ function rerouteOverflow(gates, currentGate, tickIndex, overflowAmount) {
     overflowAmount + " attendees rerouted to " + gates[nextGateIndex].id,
   );
 }
+
+function handleGateAtTick(gates, gate, tickIndex, throughputSummary) {
+  console.log("\nProcessing " + gate.id + "...");
+  console.log(gate.queue[tickIndex] + " attendees arriving.");
+  const result = processGateFlow(gate, tickIndex);
+  throughputSummary[gate.id] += result.processed;
+}
