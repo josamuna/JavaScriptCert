@@ -33,5 +33,12 @@ function initializeThroughput(gates) {
 function processGateFlow(gate, tickIndex) {
   let currentTickQueue = gate.queue[tickIndex];
   let processed = 0;
-  while (currentTickQueue > 0 && processed < gate.capacity) {}
+  while (currentTickQueue > 0 && processed < gate.capacity) {
+    currentTickQueue--;
+    processed++;
+  }
+  return {
+    processed: processed,
+    overflow: currentTickQueue,
+  };
 }
