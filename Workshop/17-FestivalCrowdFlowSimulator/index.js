@@ -69,3 +69,10 @@ function printSummary(summary) {
     console.log(gateId + ": " + summary[gateId] + " attendees processed");
   }
 }
+
+function simulateFestival(gates, timeBlock) {
+  console.log("\n" + timeBlock + " Simulation");
+  const throughputSummary = initializeThroughput(gates);
+  const maxTicks = gates[0].queue.length;
+  let tickIndex = 0;
+}
