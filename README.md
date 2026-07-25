@@ -27,7 +27,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 21. ChunkyMonkeyAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/21-ChunkyMonkeyAlgorithm)
 - [x] 22. ProfileLookup - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/22-ProfileLookup)
 - [x] 23. StringRepeatingFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/23-StringRepeatingFunction)
-- [ ] 24. MissingLetterDetector - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/24-MissingLetterDetector)
+- [x] 24. MissingLetterDetector - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/24-MissingLetterDetector)
 
 ## Workshop
 
