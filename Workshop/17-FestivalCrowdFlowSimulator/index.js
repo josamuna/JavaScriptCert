@@ -42,3 +42,12 @@ function processGateFlow(gate, tickIndex) {
     overflow: currentTickQueue,
   };
 }
+
+function rerouteOverflow(gates, currentGate, tickIndex, overflowAmount) {
+  const currentIndex = gates.indexOf(currentGate);
+  const nextGateIndex = (currentIndex + 1) % gates.length;
+  gates[nextGateIndex].queue[tickIndex] += overflowAmount;
+  console.log(
+    overflowAmount + " attendees rerouted to " + gates[nextGateIndex].id,
+  );
+}
