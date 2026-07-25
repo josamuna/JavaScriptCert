@@ -62,3 +62,10 @@ function handleGateAtTick(gates, gate, tickIndex, throughputSummary) {
     rerouteOverflow(gates, gate, tickIndex, result.overflow);
   }
 }
+
+function printSummary(summary) {
+  console.log("\nThroughput Summary");
+  for (const gateId in summary) {
+    console.log(gateId + ": " + summary[gateId] + " attendees processed");
+  }
+}
