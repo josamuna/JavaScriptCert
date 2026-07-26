@@ -54,7 +54,7 @@ function parseShipment(rawData) {
         // Once zone doen't exist, replace it with 'general'.
         zone = "general";
       }
-      // Get values from slitted array.
+      // Get values from slitted array by using array destruturing.
       let [sku, name, qty, expires] = currentRawData;
 
       // Add Object to the output array: sku, name, qty, expires, zone.
@@ -72,18 +72,22 @@ function parseShipment(rawData) {
 }
 
 function planRestock(pantry, shipment) {
-  /*if(typeof pantry === "undefined" || pantry === null || typeof pantry.length !== "number") {
-    console.log("Invalid input array.");
-    return;
-  }*/
-
   const actions = [];
-  let type = "";
 
   for (let i = 0; i < shipment.length; i++) {
+    let type = "";
+    let found = false;
+
+    for (let j = 0; j < pantry.length; j++) {
+      if (shipment[i].sku === pantry[j].sku) {
+        found = true;
+        break;
+      }
+    }
+
     if (shipment[i].qty <= 0) {
       type = "discard";
-    } else if (shipment[i].sku === pantry[i].sku) {
+    } else if (found) {
       type = "restock";
     } else {
       type = "donate";
@@ -96,10 +100,48 @@ function planRestock(pantry, shipment) {
   return actions;
 }
 
-function groupByZone(actions) {}
+function groupByZone(actions) {
+  const grouped = {};
+
+  for (let i = 0; i < actions.length; i++) {
+    const zone = actions[i].item.zone;
+
+    if (!grouped[zone]) {
+      grouped[zone] = [];
+    }
+
+    grouped[zone].push(actions[i]);
+  }
+
+  return grouped;
+}
+
+function clonePantry(pantry) {
+  const clone = [];
+
+  for (let i = 0; i < pantry.length; i++) {
+    // Destructuring Object.
+    const { sku, name, qty, expires, zone } = pantry[i];
+    clone.push({
+      sku: sku,
+      name: name,
+      qty: qty,
+      expires: expires,
+      zone: zone,
+    });
+  }
+
+  return clone;
+}
 
 const shipment = parseShipment(rawData);
-console.log(shipment);
+//console.log(shipment);
 
-const outputPlanRestock = planRestock(pantry, shipment);
-console.log(outputPlanRestock);
+const actions = planRestock(pantry, shipment);
+//console.log(outputPlanRestock);
+
+const grouped = groupByZone(actions);
+console.log(grouped);
+
+const clone = clonePantry(pantry);
+console.log(clone);
