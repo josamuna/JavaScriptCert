@@ -17,6 +17,14 @@ const pantry = [
     expires: "2020-01-01",
     zone: "general",
   },
+  {
+    sku: "D43",
+    name: "Pineapples",
+    qty: 2,
+    expires: "2020-01-01",
+    zone: "general",
+  },
+  { sku: "B21", name: "Bananas", qty: -2, expires: "2027-01-01" },
 ];
 
 const rawData = [
@@ -29,15 +37,6 @@ const rawData = [
 ];
 
 function parseShipment(rawData) {
-  if (
-    typeof rawData === "undefined" ||
-    rawData === null ||
-    typeof rawData.length !== "number"
-  ) {
-    console.log("Invalid input array.");
-    return;
-  }
-
   let arrSku = [],
     outputArr = [];
 
@@ -57,18 +56,50 @@ function parseShipment(rawData) {
       }
       // Get values from slitted array.
       let [sku, name, qty, expires] = currentRawData;
-      /*singleObj.sku = currentRawData[0];
-      singleObj.name = currentRawData[1];
-      singleObj.qty = parseInt(currentRawData[2]);
-      singleObj.expires = currentRawData[3];*/
-      qty = parseInt(qty);
+
       // Add Object to the output array: sku, name, qty, expires, zone.
-      outputArr.push({ sku, name, qty, expires, zone });
+      outputArr.push({
+        sku: sku,
+        name: name,
+        qty: parseInt(qty),
+        expires: expires,
+        zone: zone,
+      });
     }
   }
 
   return outputArr;
 }
 
-let outputShipment = parseShipment(rawData);
-console.log(outputShipment);
+function planRestock(pantry, shipment) {
+  /*if(typeof pantry === "undefined" || pantry === null || typeof pantry.length !== "number") {
+    console.log("Invalid input array.");
+    return;
+  }*/
+
+  const actions = [];
+  let type = "";
+
+  for (let i = 0; i < shipment.length; i++) {
+    if (shipment[i].qty <= 0) {
+      type = "discard";
+    } else if (shipment[i].sku === pantry[i].sku) {
+      type = "restock";
+    } else {
+      type = "donate";
+    }
+
+    // Populate the actions array with expected Object.
+    actions.push({ type: type, item: shipment[i] });
+  }
+
+  return actions;
+}
+
+function groupByZone(actions) {}
+
+const shipment = parseShipment(rawData);
+console.log(shipment);
+
+const outputPlanRestock = planRestock(pantry, shipment);
+console.log(outputPlanRestock);
