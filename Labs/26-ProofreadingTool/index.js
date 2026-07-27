@@ -3,26 +3,37 @@
 */
 
 function isPalindrome(word) {
-  if (!word || typeof word === "string") {
+  if (!word || typeof word !== "string") {
     return;
   }
 
   let forward = "",
-    backword = "";
+    backward = "";
 
-  for (let i = 0, j = word.length; i < word.length, j > 0; i++, j--) {
+  for (let i = 0, j = word.length - 1; i < word.length, j > 0; i++, j--) {
     forward += word[i].toLowerCase();
-    backword += word[j].toLowerCase();
+    backward += word[j].toLowerCase();
   }
-  console.log("forward = ", forward, "backword = ", backword);
-  if (forward === backword) {
-    // Same result.
 
+  if (forward === backward) {
+    // Same result.
     return true;
   }
 
   return false;
 }
 
-const palindrome = isPalindrome("racecar");
+// Invalid inputs.
+
+let palindrome = isPalindrome(null);
+console.log(palindrome); // undefined
+
+palindrome = isPalindrome("");
+console.log(palindrome); // undefined
+
+palindrome = isPalindrome(100);
+console.log(palindrome); // undefined
+
+// Valid inputs.
+palindrome = isPalindrome("racecar");
 console.log(palindrome);
