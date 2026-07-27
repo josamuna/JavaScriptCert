@@ -23,6 +23,26 @@ function isPalindrome(word) {
   return false;
 }
 
+function findPalindromeBreaks(words) {
+  if (!Array.isArray(words)) {
+    return;
+  }
+
+  if (words.length === 0) {
+    return [];
+  }
+
+  let notPalindrome = [];
+
+  for (let i = 0; i < words.length; i++) {
+    if (!isPalindrome(words[i])) {
+      notPalindrome.push(i);
+    }
+  }
+
+  return notPalindrome;
+}
+
 // Invalid inputs.
 
 let palindrome = isPalindrome(null);
@@ -37,3 +57,7 @@ console.log(palindrome); // undefined
 // Valid inputs.
 palindrome = isPalindrome("racecar");
 console.log(palindrome);
+
+const arrStr = ["racecar", "cheese", "vegetable", "level", "hello"];
+const notPalindrome = findPalindromeBreaks(arrStr);
+console.log(notPalindrome);
