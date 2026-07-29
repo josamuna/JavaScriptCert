@@ -78,6 +78,7 @@ function findRepeatedPhrases(words, phraseLength) {
     const phrase = words.slice(i, i + phraseLength).join(" ");
 
     if (!occurrences[phrase]) {
+      analyzeTexts;
       occurrences[phrase] = [];
     }
 
@@ -107,6 +108,30 @@ function findRepeatedPhrases(words, phraseLength) {
   return result;
 }
 
+function analyzeTexts(texts, phraseLength) {
+  if (!Array.isArray(texts)) {
+    return;
+  }
+
+  if (typeof phraseLength !== "number" || phraseLength <= 0) {
+    return;
+  }
+
+  if (texts.length === 0) {
+    return [];
+  }
+
+  const arrResult = [];
+
+  for (let i = 0; i < texts.length; i++) {
+    arrResult.push({
+      repeatedPhrases: findRepeatedPhrases(texts[i], phraseLength),
+      palindromeBreaks: findPalindromeBreaks(texts[i]),
+    });
+  }
+  return arrResult;
+}
+
 // Invalid inputs.
 
 let palindrome = isPalindrome(null);
@@ -125,11 +150,17 @@ console.log(palindrome); // [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 ]
 const notPalindrome = findPalindromeBreaks(words);
 console.log(notPalindrome);
 
-const repeated1 = findRepeatedPhrases(words, 2);
-console.log(repeated1); // [ 1, 5 ]
+let repeated = findRepeatedPhrases(words, 2);
+console.log(repeated); // [ 1, 5 ]
 
-const repeated2 = findRepeatedPhrases(["a", "a", "a", "a", "b", "a", "c"], 2);
-console.log(repeated2); // [ 0, 1, 2 ]
+repeated = findRepeatedPhrases(["a", "a", "a", "a", "b", "a", "c"], 2);
+console.log(repeated); // [ 0, 1, 2 ]
 
-const repeated3 = findRepeatedPhrases(words, 3);
-console.log(repeated3); // []
+repeated = findRepeatedPhrases(words, 3);
+console.log(repeated); // []
+
+let analyze = analyzeTexts(words, 3);
+console.log(analyze);
+
+analyzeTexts(words, 2);
+console.log(analyze);
