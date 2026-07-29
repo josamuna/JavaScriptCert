@@ -2,6 +2,22 @@
     This lab is about building a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.
 */
 
+const words = [
+  "racecar",
+  "hello",
+  "fabric",
+  "abc",
+  "cheese",
+  "hello",
+  "fabric",
+  "level",
+  "hello",
+  "hi",
+  "abc",
+  "racecar",
+  "hi",
+];
+
 function isPalindrome(word) {
   if (!word || typeof word !== "string") {
     return;
@@ -43,6 +59,54 @@ function findPalindromeBreaks(words) {
   return notPalindrome;
 }
 
+function findRepeatedPhrases(words, phraseLength) {
+  if (!Array.isArray(words)) {
+    return;
+  }
+
+  if (typeof phraseLength !== "number" || phraseLength <= 0) {
+    return;
+  }
+
+  if (phraseLength >= words.length) {
+    return [];
+  }
+
+  let occurrences = [];
+
+  for (let i = 0; i <= words.length - phraseLength; i++) {
+    const phrase = words.slice(i, i + phraseLength).join(" ");
+
+    if (!occurrences[phrase]) {
+      occurrences[phrase] = [];
+    }
+
+    occurrences[phrase].push(i);
+  }
+
+  const result = [];
+
+  for (let phrase in occurrences) {
+    if (occurrences[phrase].length > 1) {
+      // Use of spread operator to add single value inside the result array.
+      result.push(...occurrences[phrase]);
+    }
+  }
+
+  // Sort the array element ascending in case they are not.
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - 1 - i; j++) {
+      if (result[j] > result[j + 1]) {
+        const temp = result[j];
+        result[j] = result[j + 1];
+        result[j + 1] = temp;
+      }
+    }
+  }
+
+  return result;
+}
+
 // Invalid inputs.
 
 let palindrome = isPalindrome(null);
@@ -56,8 +120,16 @@ console.log(palindrome); // undefined
 
 // Valid inputs.
 palindrome = isPalindrome("racecar");
-console.log(palindrome);
+console.log(palindrome); // [ 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 ]
 
-const arrStr = ["racecar", "cheese", "vegetable", "level", "hello"];
-const notPalindrome = findPalindromeBreaks(arrStr);
+const notPalindrome = findPalindromeBreaks(words);
 console.log(notPalindrome);
+
+const repeated1 = findRepeatedPhrases(words, 2);
+console.log(repeated1); // [ 1, 5 ]
+
+const repeated2 = findRepeatedPhrases(["a", "a", "a", "a", "b", "a", "c"], 2);
+console.log(repeated2); // [ 0, 1, 2 ]
+
+const repeated3 = findRepeatedPhrases(words, 3);
+console.log(repeated3); // []
