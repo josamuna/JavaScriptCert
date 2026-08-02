@@ -30,7 +30,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 24. MissingLetterDetector - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/24-MissingLetterDetector)
 - [x] 25. SmartPantryRestocker - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/25-SmartPantryRestocker)
 - [x] 26. ProofreadingTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/26-ProofreadingTool)
-- [ ] 27. StringInverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/27-StringInverter)
+- [x] 27. StringInverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/27-StringInverter)
 
 ## Workshop
 
