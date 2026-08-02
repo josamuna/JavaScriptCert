@@ -1,6 +1,6 @@
 # FirstElementFinder
 
-Build a First Element FinderProject.
+Build a First Element Finder Project.
 
 ## Source Code
 
