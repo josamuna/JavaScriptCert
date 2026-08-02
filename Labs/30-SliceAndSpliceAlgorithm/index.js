@@ -3,20 +3,23 @@
 */
 
 function frankenSplice(nums1, nums2, index) {
-  if (
-    !Array.isArray(nums1) ||
-    nums1.length === 0 ||
-    !Array.isArray(nums2) ||
-    nums2.length === 0
-  ) {
+  if (!Array.isArray(nums1) || nums1.length === 0 || !Array.isArray(nums2)) {
     return;
   }
 
-  if (index <= 0) {
+  if (index < 0) {
     return;
   }
 
   const outputs = [];
+
+  // In case of the second array is empty.
+  if (nums2.length === 0) {
+    for (let index1 = 0; index1 < nums1.length; index1++) {
+      outputs.push(nums1[index1]);
+    }
+    return outputs;
+  }
 
   for (let index2 = 0; index2 < nums2.length; index2++) {
     if (index2 === index) {
@@ -55,3 +58,6 @@ arrayCopy = frankenSplice(
   2,
 );
 console.log(arrayCopy); // ["head", "shoulders", "claw", "tentacle", "knees", "toes"]
+
+arrayCopy = frankenSplice([1, 2, 3, 4], [], 0);
+console.log(arrayCopy); // [ 1, 2, 3, 4 ]
