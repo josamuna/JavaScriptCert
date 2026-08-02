@@ -20,6 +20,18 @@ function findLongestWordLength(str) {
 
   // Order string values descending, then the first element inside the array is the greather string.
   // console.log("Before", strArr);
+
+  // Sort more optimized with less loop
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (strArr[i].length < strArr[j].length) {
+        const temp = strArr[i];
+        strArr[i] = strArr[j];
+        strArr[j] = temp;
+      }
+    }
+  }
+  /*
   const n = strArr.length;
   for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < n - 1 - i; j++) {
@@ -29,7 +41,7 @@ function findLongestWordLength(str) {
         strArr[j + 1] = temp;
       }
     }
-  }
+  }*/
 
   // console.log("After", strArr);
   return strArr[0].length;
