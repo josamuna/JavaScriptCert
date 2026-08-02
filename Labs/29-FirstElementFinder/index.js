@@ -9,9 +9,13 @@ function findElement(nums, getFirstTruth) {
     return;
   }
 
-  const outputs = [];
+  for (const num of nums) {
+    if (getFirstTruth(num)) {
+      return num;
+    }
+  }
 
-  return outputs;
+  return;
 }
 
 //Invalid input.
