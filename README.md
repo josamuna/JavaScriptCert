@@ -32,6 +32,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 26. ProofreadingTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/26-ProofreadingTool)
 - [x] 27. StringInverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/27-StringInverter)
 - [x] 28. LargestNumberFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/28-LargestNumberFinder)
+- [ ] 29. FirstElementFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/29-FirstElementFinder)
 
 ## Workshop
 
