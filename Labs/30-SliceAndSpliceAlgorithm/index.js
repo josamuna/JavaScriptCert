@@ -17,6 +17,21 @@ function frankenSplice(nums1, nums2, index) {
   }
 
   const outputs = [];
+
+  for (let index2 = 0; index2 < nums2.length; index2++) {
+    if (index2 === index) {
+      let startIndex = index;
+      for (let index1 = 0; index1 < nums1.length; index1++) {
+        outputs[startIndex] = nums1[index1];
+        startIndex++;
+      }
+      // After adding all element from the first array, add the old value from the second array.
+      outputs.push(nums2[index2]);
+    } else {
+      outputs.push(nums2[index2]);
+    }
+  }
+
   return outputs;
 }
 
