@@ -6,7 +6,7 @@ Build a Largest Number Finder Project.
 
 ```js
 /*
-    This lab is about building a simple string inverter that reverses the characters of a given string.
+    This lab is about building a function that returns an array consisting of the largest number from each provided sub-array.
 */
 ```
 
