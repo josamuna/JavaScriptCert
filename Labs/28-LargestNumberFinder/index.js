@@ -7,9 +7,27 @@ function largestOfAll(array) {
     return;
   }
 
-  let arr = [0];
+  let outputArray = [];
 
-  return arr;
+  // Loop to get the inner array content
+  for (let i = 0; i < array.length; i++) {
+    // Sort the inner array descending and add the first element to the outputArray.
+
+    for (let index = 0; index < array[i].length; index++) {
+      for (let index1 = index + 1; index1 < array[i].length; index1++) {
+        if (array[i][index] < array[i][index1]) {
+          const temp = array[i][index];
+          array[i][index] = array[i][index1];
+          array[i][index1] = temp;
+        }
+      }
+    }
+
+    // Add the first element of the inner array to the output array.
+    outputArray.push(array[i][0]);
+  }
+
+  return outputArray;
 }
 
 // Invalid input.
@@ -32,7 +50,7 @@ largest = largestOfAll([
   [32, 35, 37, 39],
   [1000, 1001, 857, 1],
 ]);
-console.log(largest); // []
+console.log(largest); // [5, 27, 39, 1001]
 
 largest = largestOfAll([
   [13, 27, 18, 26],
