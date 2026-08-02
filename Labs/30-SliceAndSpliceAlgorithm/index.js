@@ -1,0 +1,3 @@
+/*
+    This lab is about creating an algorithm to merge two arrays.
+*/

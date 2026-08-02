@@ -33,6 +33,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 27. StringInverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/27-StringInverter)
 - [x] 28. LargestNumberFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/28-LargestNumberFinder)
 - [x] 29. FirstElementFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/29-FirstElementFinder)
+- [x] 30. sliceAndSpliceAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/30-SliceAndSpliceAlgorithm)
 
 ## Workshop
 
