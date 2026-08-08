@@ -1,5 +1,5 @@
 /*
-    This lab is about restoring a coherent narrative from an Array of story fragments.
+    This lab is about restoring a coherent narrative from a corrupted Array of story fragments.
 */
 
 const shuffledFragments = [
@@ -41,3 +41,71 @@ const shuffledFragments = [
   { id: 12, text: "he lay down beside the course to take a nap" },
   { id: 18, text: "the Tortoise was near the goal." },
 ];
+
+function compactFragments(fragments) {
+  if (!Array.isArray(fragments)) {
+    return;
+  }
+
+  let newFragments = [];
+
+  for (let i = 0; i < fragments.length; i++) {
+    if (fragments[i]) {
+      newFragments.push({ id: fragments[i].id, text: fragments[i].text });
+    } else {
+      console.log("[COMPACTED]");
+    }
+  }
+
+  return newFragments;
+}
+
+function sortFragments(fragments) {
+  let sortedFragments = [...fragments];
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    for (let j = i; j < sortedFragments.length; j++) {
+      if (sortedFragments[i].id > sortedFragments[j].id) {
+        const temp = sortedFragments[i];
+        sortedFragments[i] = sortedFragments[j];
+        sortedFragments[j] = temp;
+      }
+    }
+  }
+
+  return sortedFragments;
+}
+
+function dedupeFragments(sortedFragments) {
+  let notDuplicateFragments = [];
+  let isNextIteration = false;
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    for (let j = 0; j < notDuplicateFragments.length; j++) {
+      if (notDuplicateFragments[i].id === sortedFragments[i].id) {
+        isNextIteration = false;
+        console.log("[DEDUPED]");
+        break;
+      } else {
+        isNextIteration = true;
+      }
+    }
+
+    if (isNextIteration) {
+      notDuplicateFragments.push({
+        id: sortedFragments[i].id,
+        text: sortedFragments[i].text,
+      });
+    }
+  }
+
+  return notDuplicateFragments;
+}
+
+const compactedShuffledFragments = compactFragments(shuffledFragments);
+
+const sortedFragments = sortFragments(compactedShuffledFragments);
+
+const dedupedFragments = dedupeFragments(sortedFragments);
+
+console.log(dedupedFragments);

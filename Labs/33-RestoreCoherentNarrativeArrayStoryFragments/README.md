@@ -6,7 +6,7 @@ Build a Restore a Coherent Narrative from an Array of Story Fragments App Projec
 
 ```js
 /*
-    This lab is about restoring a coherent narrative from an Array of story fragments.
+    This lab is about restoring a coherent narrative from a corrupted Array of story fragments.
 */
 
 f;
