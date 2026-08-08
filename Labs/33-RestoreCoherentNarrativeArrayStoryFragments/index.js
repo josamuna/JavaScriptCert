@@ -78,11 +78,11 @@ function sortFragments(fragments) {
 
 function dedupeFragments(sortedFragments) {
   let notDuplicateFragments = [];
-  let isNextIteration = false;
+  let isNextIteration = true;
 
   for (let i = 0; i < sortedFragments.length; i++) {
     for (let j = 0; j < notDuplicateFragments.length; j++) {
-      if (notDuplicateFragments[i].id === sortedFragments[i].id) {
+      if (notDuplicateFragments[j].id === sortedFragments[i].id) {
         isNextIteration = false;
         console.log("[DEDUPED]");
         break;
