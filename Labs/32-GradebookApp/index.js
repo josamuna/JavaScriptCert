@@ -25,11 +25,7 @@ function getAverage(testScores) {
 }
 
 function getGrade(studentScore) {
-  if (
-    !studentScore ||
-    typeof studentScore !== "number" ||
-    Number.isNaN(studentScore)
-  ) {
+  if (typeof studentScore !== "number" || Number.isNaN(studentScore)) {
     return;
   }
 
