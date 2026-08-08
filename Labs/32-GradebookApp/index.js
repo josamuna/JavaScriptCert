@@ -9,29 +9,104 @@
 */
 
 function getAverage(testScores) {
+  if (!Array.isArray(testScores) || testScores.length === 0) {
+    return;
+  }
+
   let averageScore = 0;
+
+  for (const score of testScores) {
+    averageScore += score;
+  }
+
+  averageScore /= testScores.length;
 
   return averageScore;
 }
 
 function getGrade(studentScore) {
-  let gradeLetter = "";
+  if (
+    !studentScore ||
+    typeof studentScore !== "number" ||
+    Number.isNaN(studentScore)
+  ) {
+    return;
+  }
 
-  return gradeLetter;
+  if (studentScore < 0) {
+    return;
+  }
+
+  if (studentScore === 100) {
+    return "A+";
+  } else if (studentScore >= 90 && studentScore <= 99) {
+    return "A";
+  } else if (studentScore >= 80 && studentScore <= 89) {
+    return "B";
+  } else if (studentScore >= 70 && studentScore <= 79) {
+    return "C";
+  } else if (studentScore >= 60 && studentScore <= 69) {
+    return "D";
+  } else if (studentScore >= 0 && studentScore <= 59) {
+    return "F";
+  }
 }
 
+// Internal function. Not needed to check input param.
 function hasPassingGrade(score) {
-  return false;
+  const grade = getGrade(score);
+
+  switch (grade) {
+    case "A+":
+    case "A":
+    case "B":
+    case "C":
+    case "D":
+      return true;
+    case "F":
+      return false;
+    default:
+      return false;
+  }
 }
 
 function studentMsg(scores, studentScore) {
-  let formattedMsg = "";
+  if (
+    !studentScore ||
+    typeof studentScore !== "number" ||
+    Number.isNaN(studentScore)
+  ) {
+    return;
+  }
 
-  return formattedMsg;
+  if (!Array.isArray(scores) || scores.length === 0) {
+    return;
+  }
+
+  if (studentScore < 0) {
+    return;
+  }
+
+  const average = getAverage(scores);
+  const grade = getGrade(studentScore);
+  const isPassed = hasPassingGrade(studentScore);
+
+  if (isPassed) {
+    // Student passed.
+    return `Class average: ${average}. Your grade: ${grade}. You passed the course.`;
+  } else {
+    // Student failed.
+    return `Class average: ${average}. Your grade: ${grade}. You failed the course.`;
+  }
 }
 
-// Valid inputs.
-let studentMessage = studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37);
+let studentMessage = studentMsg([], 37);
+console.log(studentMessage); // undefined
+
+studentMessage = studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], -2);
+console.log(studentMessage); // undefined
+
+studentMessage = studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37);
 console.log(studentMessage); // Class average: 71.7. Your grade: F. You failed the course.
 
 studentMessage = studentMsg([56, 23, 89, 42, 75, 11, 68, 34, 91, 19], 100);
