@@ -35,7 +35,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 29. FirstElementFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/29-FirstElementFinder)
 - [x] 30. sliceAndSpliceAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/30-SliceAndSpliceAlgorithm)
 - [x] 31. PyramidGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/31-PyramidGenerator)
-- [ ] 32. GradebookApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/32-GradebookApp)
+- [x] 32. GradebookApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/32-GradebookApp)
 
 ## Workshop
 
