@@ -7,12 +7,12 @@ Build a Gradebook App Project.
 ```js
 /*
     This lab is about set grade according to the student average score.
-    100	"A+"
-    90 - 99	"A"
-    80 - 89	"B"
-    70 - 79	"C"
-    60 - 69	"D"
-    0 - 59	"F"
+    100 "A+"
+    90 - 99 "A"
+    80 - 89 "B"
+    70 - 79 "C"
+    60 - 69 "D"
+    0 - 59 "F"
 */
 
 function getAverage(testScores) {
