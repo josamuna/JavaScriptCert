@@ -11,7 +11,7 @@ function pyramid(patternCharacter, rows, inverted) {
     return;
   }
 
-  let outputPyramid = "";
+  let outputPyramid = "\n"; //Initialize with a new line at the begining.
 
   if (!inverted) {
     for (let i = 0; i < rows; i++) {
