@@ -67,11 +67,7 @@ function hasPassingGrade(score) {
 }
 
 function studentMsg(scores, studentScore) {
-  if (
-    !studentScore ||
-    typeof studentScore !== "number" ||
-    Number.isNaN(studentScore)
-  ) {
+  if (typeof studentScore !== "number" || Number.isNaN(studentScore)) {
     return;
   }
 
