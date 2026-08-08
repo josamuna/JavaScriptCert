@@ -34,7 +34,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 28. LargestNumberFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/28-LargestNumberFinder)
 - [x] 29. FirstElementFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/29-FirstElementFinder)
 - [x] 30. sliceAndSpliceAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/30-SliceAndSpliceAlgorithm)
-- [ ] 31. PyramidGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/31-PyramidGenerator)
+- [x] 31. PyramidGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/31-PyramidGenerator)
 
 ## Workshop
 
