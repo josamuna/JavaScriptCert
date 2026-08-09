@@ -38,7 +38,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 32. GradebookApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/32-GradebookApp)
 - [x] 33. RestoreCoherentNarrativeArrayStoryFragments - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/33-RestoreCoherentNarrativeArrayStoryFragments)
 - [x] 34. TitleCaseConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/34-TitleCaseConverter)
-- [ ] 35. ImplementFalsyRemover - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/35-ImplementFalsyRemover)
+- [x] 35. ImplementFalsyRemover - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/35-ImplementFalsyRemover)
 
 ## Workshop
 
