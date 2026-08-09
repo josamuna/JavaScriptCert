@@ -1,5 +1,5 @@
 /*
-    This lab is about restoring a coherent narrative from an Array of story fragments.
+    This lab is about restoring a coherent narrative from a corrupted Array of story fragments.
 */
 
 const shuffledFragments = [
@@ -41,3 +41,116 @@ const shuffledFragments = [
   { id: 12, text: "he lay down beside the course to take a nap" },
   { id: 18, text: "the Tortoise was near the goal." },
 ];
+
+function compactFragments(fragments) {
+  if (!Array.isArray(fragments)) {
+    return;
+  }
+
+  let newFragments = [];
+
+  for (let i = 0; i < fragments.length; i++) {
+    if (fragments[i]) {
+      newFragments.push({ id: fragments[i].id, text: fragments[i].text });
+    } else {
+      console.log("[COMPACTED]");
+    }
+  }
+
+  return newFragments;
+}
+
+function sortFragments(fragments) {
+  let sortedFragments = [...fragments];
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    for (let j = i; j < sortedFragments.length; j++) {
+      if (sortedFragments[i].id > sortedFragments[j].id) {
+        const temp = sortedFragments[i];
+        sortedFragments[i] = sortedFragments[j];
+        sortedFragments[j] = temp;
+      }
+    }
+  }
+
+  return sortedFragments;
+}
+
+function dedupeFragments(sortedFragments) {
+  let notDuplicateFragments = [];
+  let isNextIteration = true;
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    for (let j = 0; j < notDuplicateFragments.length; j++) {
+      if (notDuplicateFragments[j].id === sortedFragments[i].id) {
+        isNextIteration = false;
+        console.log(`[DEDUPED] for id ${sortedFragments[i].id}`);
+        break;
+      } else {
+        isNextIteration = true;
+      }
+    }
+
+    if (isNextIteration) {
+      notDuplicateFragments.push({
+        id: sortedFragments[i].id,
+        text: sortedFragments[i].text,
+      });
+    }
+  }
+
+  return notDuplicateFragments;
+}
+
+function fillMissingFragments(sortedFragments) {
+  let missingFragments = [];
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    const currentFragment = sortedFragments[i];
+
+    missingFragments.push(currentFragment);
+
+    if (i < sortedFragments.length - 1) {
+      const nextFragment = sortedFragments[i + 1];
+
+      for (
+        let missingId = currentFragment.id + 1;
+        missingId < nextFragment.id;
+        missingId++
+      ) {
+        missingFragments.push({ id: missingId, text: "[...]" });
+
+        console.log(`[FILLED] Missing fragment with id ${missingId}`);
+      }
+    }
+  }
+  assembleStory;
+
+  return missingFragments;
+}
+
+function assembleStory(sortedFragments) {
+  let fragmentText = "";
+
+  for (let index = 0; index < sortedFragments.length; index++) {
+    if ((index + 1) % sortedFragments.length !== 0) {
+      // not last index
+      fragmentText = fragmentText + sortedFragments[index].text + "\n";
+    } else {
+      // last index
+      fragmentText += sortedFragments[index].text;
+    }
+  }
+
+  return fragmentText;
+}
+
+const compactedShuffledFragments = compactFragments(shuffledFragments);
+
+const sortedFragments = sortFragments(compactedShuffledFragments);
+
+const dedupedFragments = dedupeFragments(sortedFragments);
+
+const filledFragments = fillMissingFragments(dedupedFragments);
+
+console.log(assembleStory(filledFragments));
