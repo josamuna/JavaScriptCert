@@ -37,6 +37,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 31. PyramidGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/31-PyramidGenerator)
 - [x] 32. GradebookApp - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/32-GradebookApp)
 - [x] 33. RestoreCoherentNarrativeArrayStoryFragments - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/33-RestoreCoherentNarrativeArrayStoryFragments)
+- [ ] 34. TitleCaseConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/34-TitleCaseConverter)
 
 ## Workshop
 
