@@ -39,6 +39,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 33. RestoreCoherentNarrativeArrayStoryFragments - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/33-RestoreCoherentNarrativeArrayStoryFragments)
 - [x] 34. TitleCaseConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/34-TitleCaseConverter)
 - [x] 35. ImplementFalsyRemover - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/35-ImplementFalsyRemover)
+- [ ] 36. InventoryManagementProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/35-InventoryManagementProgram)
 
 ## Workshop
 
