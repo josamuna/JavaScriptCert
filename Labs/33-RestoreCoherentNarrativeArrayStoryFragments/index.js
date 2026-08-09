@@ -84,7 +84,7 @@ function dedupeFragments(sortedFragments) {
     for (let j = 0; j < notDuplicateFragments.length; j++) {
       if (notDuplicateFragments[j].id === sortedFragments[i].id) {
         isNextIteration = false;
-        console.log("[DEDUPED]");
+        console.log(`[DEDUPED] for id ${sortedFragments[i].id}`);
         break;
       } else {
         isNextIteration = true;
@@ -102,10 +102,55 @@ function dedupeFragments(sortedFragments) {
   return notDuplicateFragments;
 }
 
+function fillMissingFragments(sortedFragments) {
+  let missingFragments = [];
+
+  for (let i = 0; i < sortedFragments.length; i++) {
+    const currentFragment = sortedFragments[i];
+
+    missingFragments.push(currentFragment);
+
+    if (i < sortedFragments.length - 1) {
+      const nextFragment = sortedFragments[i + 1];
+
+      for (
+        let missingId = currentFragment.id + 1;
+        missingId < nextFragment.id;
+        missingId++
+      ) {
+        missingFragments.push({ id: missingId, text: "[...]" });
+
+        console.log(`[FILLED] Missing fragment with id ${missingId}`);
+      }
+    }
+  }
+  assembleStory;
+
+  return missingFragments;
+}
+
+function assembleStory(sortedFragments) {
+  let fragmentText = "";
+
+  for (let index = 0; index < sortedFragments.length; index++) {
+    if ((index + 1) % sortedFragments.length !== 0) {
+      // not last index
+      fragmentText = fragmentText + sortedFragments[index].text + "\n";
+    } else {
+      // last index
+      fragmentText += sortedFragments[index].text;
+    }
+  }
+
+  return fragmentText;
+}
+
 const compactedShuffledFragments = compactFragments(shuffledFragments);
 
 const sortedFragments = sortFragments(compactedShuffledFragments);
 
 const dedupedFragments = dedupeFragments(sortedFragments);
 
-console.log(dedupedFragments);
+const filledFragments = fillMissingFragments(dedupedFragments);
+
+console.log(assembleStory(filledFragments));
