@@ -1,0 +1,3 @@
+/*
+    This lab is about creating a function that removes all falsy values from an array.
+*/
