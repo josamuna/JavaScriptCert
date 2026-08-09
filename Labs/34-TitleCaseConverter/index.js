@@ -15,10 +15,13 @@ function titleCase(strPhrase) {
     if ((index + 1) % chuncks.length !== 0) {
       // Not last index.
       titleCase +=
-        chuncks[index][0].toUpperCase() + chuncks[index].slice(1) + " ";
+        chuncks[index][0].toUpperCase() +
+        chuncks[index].slice(1).toLowerCase() +
+        " ";
     } else {
       // Last index
-      titleCase += chuncks[index][0].toUpperCase() + chuncks[index].slice(1);
+      titleCase +=
+        chuncks[index][0].toUpperCase() + chuncks[index].slice(1).toLowerCase();
     }
   }
 
@@ -38,3 +41,6 @@ console.log(title); // I Like To Code
 
 title = titleCase("javaScript is fun");
 console.log(title); // JavaScript Is Fun
+
+title = titleCase("sHoRt AnD sToUt");
+console.log(title); // Short And Stout
