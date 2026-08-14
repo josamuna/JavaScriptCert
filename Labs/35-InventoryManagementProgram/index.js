@@ -21,24 +21,42 @@ function findProductIndex(productName) {
   return productIndex;
 }
 
-inventory = [
-  { name: "mouse", quantity: 45 },
-  { name: "keyboard", quantity: 22 },
-  { name: "monitor", quantity: 12 },
-  { name: "hub", quantity: 60 },
-  { name: "drive", quantity: 35 },
-  { name: "headphones", quantity: 18 },
-  { name: "mousepad", quantity: 50 },
-  { name: "chair", quantity: 8 },
-  { name: "lamp", quantity: 25 },
-  { name: "webcam", quantity: 15 },
-  { name: "stand", quantity: 30 },
-  { name: "cable", quantity: 85 },
-  { name: "outlet", quantity: 40 },
-  { name: "flour", quantity: 10 },
-  { name: "batteries", quantity: 120 },
-  { name: "earbuds", quantity: 14 },
-];
+function addProduct(productObject) {
+  // Excluded null, undefined or empty object.
+  if (!productObject || Object.keys(productObject).length === 0) {
+    return;
+  }
+
+  if (
+    !Object.hasOwn(productObject, "name") ||
+    !Object.hasOwn(productObject, "quantity")
+  ) {
+    return;
+  }
+
+  if (inventory.length === 0) {
+    inventory.push(productObject);
+    console.log(`${inventory[0].name} added to inventory.`);
+  } else {
+    let isQuantityUpdated = false;
+    for (let i = 0; i < inventory.length; i++) {
+      if (productObject.name.toLowerCase() === inventory[i].name) {
+        inventory[i].quantity += productObject.quantity;
+        if (findProductIndex(productObject.name) !== -1) {
+          console.log(`${productObject.name.toLowerCase()} quantity updated.`);
+          isQuantityUpdated = true;
+          break;
+        }
+      }
+    }
+    if (!isQuantityUpdated) {
+      // Add the Object to the Array.
+      const { name, quantity } = productObject;
+      inventory.push({ name: name.toLowerCase(), quantity: quantity });
+      console.log(`${productObject.name} added to inventory.`);
+    }
+  }
+}
 
 let indexProduct = findProductIndex("flour");
 console.log(indexProduct); //13
@@ -48,3 +66,24 @@ console.log(indexProduct); //13
 
 indexProduct = findProductIndex("Flou");
 console.log(indexProduct); // -1
+
+addProduct({ name: "mouse", quantity: 45 });
+console.log(inventory);
+
+addProduct({ name: "mouse", quantity: 30 });
+console.log(inventory);
+
+addProduct({ name: "keyboard", quantity: 22 });
+console.log(inventory);
+
+addProduct({ name: "keyboard", quantity: 10 });
+console.log(inventory);
+
+addProduct({ name: "hub", quantity: 60 });
+console.log(inventory);
+
+addProduct({ name: "FLOUR", quantity: 5 });
+console.log(inventory);
+
+addProduct({ name: "FLOUR", quantity: 50 });
+console.log(inventory);
