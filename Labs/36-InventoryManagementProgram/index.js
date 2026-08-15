@@ -141,3 +141,6 @@ console.log(inventory); // Not enough
 
 removeProduct("keyboards", 50);
 console.log(inventory); // Not found
+
+removeProduct("keyboard", 30);
+console.log(inventory); // Remove

@@ -148,6 +148,9 @@ console.log(inventory); // Not enough
 
 removeProduct("keyboards", 50);
 console.log(inventory); // Not found
+
+removeProduct("keyboard", 30);
+console.log(inventory); // Remove
 ```
 
 ## Output
@@ -156,4 +159,4 @@ console.log(inventory); // Not found
 
 ![Image](https://github.com/user-attachments/assets/373d09ab-f3f3-4aa6-86d4-4a195799aad0)
 
-![Image](https://github.com/user-attachments/assets/3c6488aa-5dd2-455b-bd00-042d63d1a2ed)
+![Image](https://github.com/user-attachments/assets/59bd917d-b039-4ef1-9bdb-9da6dd6b3697)
