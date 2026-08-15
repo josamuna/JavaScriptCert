@@ -1,0 +1,3 @@
+/*
+    This lab is about building a random password generator.
+*/
