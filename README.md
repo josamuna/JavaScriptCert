@@ -40,7 +40,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 34. TitleCaseConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/34-TitleCaseConverter)
 - [x] 35. ImplementFalsyRemover - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/35-ImplementFalsyRemover)
 - [x] 36. InventoryManagementProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/36-InventoryManagementProgram)
-- [ ] 37. ImplementUniqueSortedUnion - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/37-ImplementUniqueSortedUnion)
+- [x] 37. ImplementUniqueSortedUnion - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/37-ImplementUniqueSortedUnion)
 
 ## Workshop
 
