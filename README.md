@@ -42,7 +42,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 36. InventoryManagementProgram - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/36-InventoryManagementProgram)
 - [x] 37. ImplementUniqueSortedUnion - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/37-ImplementUniqueSortedUnion)
 - [x] 38. PasswordGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/38-PasswordGenerator)
-- [ ] 39. SumAllNumbersAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/39-SumAllNumbersAlgorithm)
+- [x] 39. SumAllNumbersAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/39-SumAllNumbersAlgorithm)
 
 ## Workshop
 
