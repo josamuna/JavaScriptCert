@@ -35,15 +35,17 @@ function addProduct(productObject) {
   }
 
   if (inventory.length === 0) {
-    inventory.push(productObject);
-    console.log(`${inventory[0].name} added to inventory.`);
+    const { name, quantity } = productObject;
+    inventory.push({ name: name.toLowerCase(), quantity: quantity });
+    console.log(`${name.toLowerCase()} added to inventory`);
   } else {
     let isQuantityUpdated = false;
+
     for (let i = 0; i < inventory.length; i++) {
       if (productObject.name.toLowerCase() === inventory[i].name) {
         inventory[i].quantity += productObject.quantity;
         if (findProductIndex(productObject.name) !== -1) {
-          console.log(`${productObject.name.toLowerCase()} quantity updated.`);
+          console.log(`${productObject.name.toLowerCase()} quantity updated`);
           isQuantityUpdated = true;
           break;
         }
@@ -53,7 +55,7 @@ function addProduct(productObject) {
       // Add the Object to the Array.
       const { name, quantity } = productObject;
       inventory.push({ name: name.toLowerCase(), quantity: quantity });
-      console.log(`${productObject.name} added to inventory.`);
+      console.log(`${name.toLowerCase()} added to inventory`);
     }
   }
 }
