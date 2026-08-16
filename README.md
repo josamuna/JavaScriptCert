@@ -44,7 +44,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 38. PasswordGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/38-PasswordGenerator)
 - [x] 39. SumAllNumbersAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/39-SumAllNumbersAlgorithm)
 - [x] 40. ImplementDNAPairGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/40-ImplementDNAPairGenerator)
-- [ ] 41. HTMLEntityConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/41-HTMLEntityConverter)
+- [x] 41. HTMLEntityConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/41-HTMLEntityConverter)
 
 ## Workshop
 
