@@ -1,0 +1,3 @@
+/*
+    This lab is about converting converting special characters in a string with their corresponding HTML entities. 
+*/
