@@ -45,6 +45,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 39. SumAllNumbersAlgorithm - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/39-SumAllNumbersAlgorithm)
 - [x] 40. ImplementDNAPairGenerator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/40-ImplementDNAPairGenerator)
 - [x] 41. HTMLEntityConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/41-HTMLEntityConverter)
+- [ ] 42. OddFibonacciSumCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/42-OddFibonacciSumCalculator)
 
 ## Workshop
 
