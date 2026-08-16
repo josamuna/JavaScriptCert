@@ -22,9 +22,9 @@ function sumFibs(positiveNumber) {
       let newFibonacciValue = 0;
       for (let j = index; j < i; j++) {
         //1 ; j < 3
-        newFibonacciValue += j; // 0,1,1,2,3,5,8,13,21
+        newFibonacciValue += allFibo[j]; // 0,1,1,2,3,5,8,13,21
       }
-      console.log(newFibonacciValue);
+      //   console.log(newFibonacciValue);
       allFibo.push(newFibonacciValue);
     }
   }
