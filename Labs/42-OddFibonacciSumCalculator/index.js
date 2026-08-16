@@ -1,5 +1,6 @@
 /*
-    This lab is about building odd Fibonacci sum calculator that computes the sum of all odd Fibonacci numbers that are less than or equal to a given positive integer. 
+    This lab is about building an odd Fibonacci sum calculator that computes the sum of all
+    odd Fibonacci numbers that are less than or equal to a given positive integer. 
 */
 
 function sumFibs(positiveNumber) {
