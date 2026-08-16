@@ -12,25 +12,37 @@ function sumFibs(positiveNumber) {
   }
 
   let sum = 0;
-  const allFibo = [];
+  let previous = 0;
+  let current = 1;
 
-  for (let i = 0; i <= positiveNumber; i++) {
-    if (i === 0 || i === 1) {
-      allFibo.push(i);
-    } else {
-      let index = i - 2; //5-2=3
-      let newFibonacciValue = 0;
-      for (let j = index; j < i; j++) {
-        //1 ; j < 3
-        newFibonacciValue += allFibo[j]; // 0,1,1,2,3,5,8,13,21
-      }
-      //   console.log(newFibonacciValue);
-      allFibo.push(newFibonacciValue);
+  while (current <= positiveNumber) {
+    // Add odd Fibo number.
+    if (current % 2 !== 0) {
+      sum += current;
     }
+
+    const next = previous + current;
+    previous = current;
+    current = next;
   }
 
-  return allFibo;
+  return sum;
 }
 
-let oddFibonacci = sumFibs(10);
-console.log(oddFibonacci);
+let oddFibonacci = sumFibs(1);
+console.log(oddFibonacci); // 2
+
+oddFibonacci = sumFibs(1000);
+console.log(oddFibonacci); // 1785
+
+oddFibonacci = sumFibs(4000000);
+console.log(oddFibonacci); // 4613732
+
+oddFibonacci = sumFibs(4);
+console.log(oddFibonacci); // 5
+
+oddFibonacci = sumFibs(75024);
+console.log(oddFibonacci); // 60696
+
+oddFibonacci = sumFibs(75025);
+console.log(oddFibonacci); // 135721
