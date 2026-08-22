@@ -35,8 +35,22 @@ const playlists = [
       votes: 4,
       bpm: 128,
     },
+    {
+      trackId: "trk103",
+      artist: "Lunar Arcade",
+      title: "Midnight Frequency",
+      votes: 4,
+      bpm: 128,
+    },
   ],
   [
+    {
+      trackId: "trk201",
+      artist: "Solar Echo",
+      title: "Glass Skyline",
+      votes: 3,
+      bpm: 115,
+    },
     {
       trackId: "trk201",
       artist: "Solar Echo",
@@ -78,5 +92,79 @@ function flattenPlaylists(arrayPlaylists) {
   return flattenPlaylists;
 }
 
-let flattenItem = flattenPlaylists(playlists);
-console.log(flattenItem);
+function scoreTracks(objTracks) {
+  if (!Array.isArray(objTracks) || objTracks.length === 0) {
+    return;
+  }
+
+  let flattenTracks = [];
+
+  for (let i = 0; i < objTracks.length; i++) {
+    const { trackId, artist, title, votes, bpm } = objTracks[i];
+    const score = votes * 10 - Math.abs(bpm - 120);
+    flattenTracks.push({
+      trackId: trackId,
+      artist: artist,
+      title: title,
+      votes: votes,
+      bpm: bpm,
+      score: score,
+    });
+  }
+
+  return flattenTracks;
+}
+
+function dedupeTracks(flattenTracks) {
+  if (!Array.isArray(flattenTracks) || flattenTracks.length === 0) {
+    return;
+  }
+
+  let scoreDedupeTracks = [];
+  let countMatchedFound = 0;
+
+  for (let i = 0; i < flattenTracks.length; i++) {
+    countMatchedFound = -1;
+
+    for (let j = i + 1; j < flattenTracks.length; j++) {
+      if (flattenTracks[i].trackId === flattenTracks[j].trackId) {
+        // Matched value found. First occurrence.
+        countMatchedFound += 1; // next occurrence will be skipped.
+        console.log("===>", countMatchedFound);
+        if (countMatchedFound === 0) {
+          console.log(
+            flattenTracks[i].trackId,
+            " <=> ",
+            flattenTracks[j].trackId,
+          );
+          // Add value in the output array only once.
+          const { trackId, artist, title, votes, bpm, score } =
+            flattenTracks[i];
+          scoreDedupeTracks.push({
+            trackId: trackId,
+            artist: artist,
+            title: title,
+            votes: votes,
+            bpm: bpm,
+            score: score,
+          });
+        }
+      } else {
+        // No matched value found, and add to the output array.
+        //const { trackId, artist, title, votes, bpm, score } = flattenTracks[i];
+        //scoreDedupeTracks.push({ trackId: trackId, artist: artist, title: title, votes: votes, bpm: bpm, score: score });
+      }
+    }
+  }
+
+  return scoreDedupeTracks;
+}
+
+let flattenedPlaylists = flattenPlaylists(playlists);
+// console.log(flattenItem);
+
+let flattenedScoreTracks = scoreTracks(flattenedPlaylists);
+// console.log(flattenedScoreTracks);
+
+let flattenedTracks = dedupeTracks(flattenedScoreTracks);
+console.log(flattenedTracks);
