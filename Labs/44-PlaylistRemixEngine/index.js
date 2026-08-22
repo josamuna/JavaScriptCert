@@ -42,6 +42,13 @@ const playlists = [
       votes: 4,
       bpm: 128,
     },
+    {
+      trackId: "trk104",
+      artist: "Neon Harbor",
+      title: "Happy Birthday",
+      votes: 40,
+      bpm: 108,
+    },
   ],
   [
     {
@@ -64,6 +71,20 @@ const playlists = [
       title: "Satellite Hearts",
       votes: 6,
       bpm: 124,
+    },
+    {
+      trackId: "trk203",
+      artist: "Solar Echo",
+      title: "Nice Job Dad",
+      votes: 10,
+      bpm: 15,
+    },
+    {
+      trackId: "trk204",
+      artist: "Solar Echo",
+      title: "Go Up Yourself",
+      votes: 7,
+      bpm: 120,
     },
   ],
 ];
@@ -132,8 +153,7 @@ function dedupeTracks(flattenTracks) {
           // Matched value found. Ignore the item.
           break;
         } else if ((j + 1) % scoreDedupeTracks.length === 0) {
-          // No matched value found from the beginning to the end of the array,
-          // then and add current object to the output array.
+          // No matched value found from the beginning to the end of the array, then and add current object to the output array.
           const { trackId, artist, title, votes, bpm, score } =
             flattenTracks[i];
           scoreDedupeTracks.push({
@@ -152,6 +172,18 @@ function dedupeTracks(flattenTracks) {
   return scoreDedupeTracks;
 }
 
+function enforceArtistQuota(tracks, maxPerArtist) {
+  if (!Array.isArray(tracks) || tracks.length === 0) {
+    return;
+  }
+
+  let enforcedArtists = [];
+
+  for (let i = 0; i < tracks.length; i++) {}
+
+  return enforcedArtists;
+}
+
 let flattenedPlaylists = flattenPlaylists(playlists);
 // console.log(flattenItem);
 
@@ -160,3 +192,6 @@ let flattenedScoreTracks = scoreTracks(flattenedPlaylists);
 
 let flattenedTracks = dedupeTracks(flattenedScoreTracks);
 console.log(flattenedTracks);
+
+let enforcedTrack = enforceArtistQuota(flattenedTracks);
+console.log(enforcedTrack);
