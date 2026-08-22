@@ -47,6 +47,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 41. HTMLEntityConverter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/41-HTMLEntityConverter)
 - [x] 42. OddFibonacciSumCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/42-OddFibonacciSumCalculator)
 - [x] 43. ImplementElementSkipper - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/43-ImplementElementSkipper)
+- [ ] 44. PlaylistRemixEngine - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/44-PlaylistRemixEngine)
 
 ## Workshop
 
