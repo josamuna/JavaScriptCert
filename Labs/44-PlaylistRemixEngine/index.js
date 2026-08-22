@@ -124,20 +124,16 @@ function dedupeTracks(flattenTracks) {
   let countMatchedFound = 0;
 
   for (let i = 0; i < flattenTracks.length; i++) {
-    countMatchedFound = -1;
-
-    for (let j = i + 1; j < flattenTracks.length; j++) {
-      if (flattenTracks[i].trackId === flattenTracks[j].trackId) {
-        // Matched value found. First occurrence.
-        countMatchedFound += 1; // next occurrence will be skipped.
-        console.log("===>", countMatchedFound);
-        if (countMatchedFound === 0) {
-          console.log(
-            flattenTracks[i].trackId,
-            " <=> ",
-            flattenTracks[j].trackId,
-          );
-          // Add value in the output array only once.
+    if (scoreDedupeTracks.length === 0) {
+      scoreDedupeTracks.push(flattenTracks[i]);
+    } else {
+      for (let j = 0; j < scoreDedupeTracks.length; j++) {
+        if (flattenTracks[i].trackId === scoreDedupeTracks[j].trackId) {
+          // Matched value found. Ignore the item.
+          break;
+        } else if ((j + 1) % scoreDedupeTracks.length === 0) {
+          // No matched value found from the beginning to the end of the array,
+          // then and add current object to the output array.
           const { trackId, artist, title, votes, bpm, score } =
             flattenTracks[i];
           scoreDedupeTracks.push({
@@ -149,10 +145,6 @@ function dedupeTracks(flattenTracks) {
             score: score,
           });
         }
-      } else {
-        // No matched value found, and add to the output array.
-        //const { trackId, artist, title, votes, bpm, score } = flattenTracks[i];
-        //scoreDedupeTracks.push({ trackId: trackId, artist: artist, title: title, votes: votes, bpm: bpm, score: score });
       }
     }
   }
