@@ -205,24 +205,48 @@ function buildSchedule(tracks) {
   let trackArtists = [];
 
   for (let i = 0; i < tracks.length; i++) {
-    const value = { slot: i, trackId: tracks[i].trackId };
+    const value = { slot: i + 1, trackId: tracks[i].trackId };
     trackArtists.push(value);
   }
 
   return trackArtists;
 }
 
-let flattenedPlaylists = flattenPlaylists(playlists);
+function remixPlaylist(playlists, maxAllowedArtist) {
+  // Flattened playlist.
+  const flatPlaylist = flattenPlaylists(playlists);
+
+  // Score each playlist track.
+  const scoredTrack = scoreTracks(flatPlaylist);
+
+  // Dedupe track and remove duplicates.
+  const dedupeTrack = dedupeTracks(scoredTrack);
+
+  // Enforcing artist quota by selecting the desired number.
+  const artistQuota = enforceArtistQuota(dedupeTrack, maxAllowedArtist);
+
+  // finally, schedule artist and get the final output.
+  const schedule = buildSchedule(artistQuota);
+
+  return schedule;
+}
+
+const flattenedPlaylists = flattenPlaylists(playlists);
 // console.log(flattenItem);
 
-let flattenedScoreTracks = scoreTracks(flattenedPlaylists);
+const flattenedScoreTracks = scoreTracks(flattenedPlaylists);
 // console.log(flattenedScoreTracks);
 
-let flattenedTracks = dedupeTracks(flattenedScoreTracks);
+const flattenedTracks = dedupeTracks(flattenedScoreTracks);
 // console.log(flattenedTracks);
 
-let enforcedTrack = enforceArtistQuota(flattenedTracks, 4);
+const enforcedTrack = enforceArtistQuota(flattenedTracks, 4);
 // console.log(enforcedTrack); // Only 4 Artists
 
-let scheduleArtist = buildSchedule(enforcedTrack);
-console.log(scheduleArtist);
+const scheduleArtist = buildSchedule(enforcedTrack);
+// console.log(scheduleArtist);
+
+// ====================== FINAL OUTPUT ========================
+
+const scheduledTrack = remixPlaylist(playlists, 5); // 5 artist only.
+console.log(scheduledTrack);
