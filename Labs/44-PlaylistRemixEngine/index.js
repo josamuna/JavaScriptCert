@@ -142,7 +142,6 @@ function dedupeTracks(flattenTracks) {
   }
 
   let scoreDedupeTracks = [];
-  let countMatchedFound = 0;
 
   for (let i = 0; i < flattenTracks.length; i++) {
     if (scoreDedupeTracks.length === 0) {
@@ -179,7 +178,21 @@ function enforceArtistQuota(tracks, maxPerArtist) {
 
   let enforcedArtists = [];
 
-  for (let i = 0; i < tracks.length; i++) {}
+  for (let i = 0, j = 1; i < tracks.length && j <= maxPerArtist; i++, j++) {
+    if (enforcedArtists.length === 0) {
+      enforcedArtists.push(tracks[i]);
+    } else {
+      const { trackId, artist, title, votes, bpm, score } = tracks[i];
+      enforcedArtists.push({
+        trackId: trackId,
+        artist: artist,
+        title: title,
+        votes: votes,
+        bpm: bpm,
+        score: score,
+      });
+    }
+  }
 
   return enforcedArtists;
 }
@@ -191,7 +204,7 @@ let flattenedScoreTracks = scoreTracks(flattenedPlaylists);
 // console.log(flattenedScoreTracks);
 
 let flattenedTracks = dedupeTracks(flattenedScoreTracks);
-console.log(flattenedTracks);
+// console.log(flattenedTracks);
 
-let enforcedTrack = enforceArtistQuota(flattenedTracks);
-console.log(enforcedTrack);
+let enforcedTrack = enforceArtistQuota(flattenedTracks, 4);
+console.log(enforcedTrack); // Only 4 Artists
