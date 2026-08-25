@@ -255,7 +255,7 @@ const scheduleArtist = buildSchedule(enforcedTrack);
 
 // ====================== FINAL OUTPUT ========================
 
-const scheduledTrack = remixPlaylist(playlists, 5); // 5 artist only.
+const scheduledTrack = remixPlaylist(playlists, 5); // 5 artists only.
 console.log(scheduledTrack);
 ```
 
