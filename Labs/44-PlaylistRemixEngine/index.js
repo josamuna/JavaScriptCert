@@ -197,6 +197,21 @@ function enforceArtistQuota(tracks, maxPerArtist) {
   return enforcedArtists;
 }
 
+function buildSchedule(tracks) {
+  if (!Array.isArray(tracks) | (tracks.length === 0)) {
+    return;
+  }
+
+  let trackArtists = [];
+
+  for (let i = 0; i < tracks.length; i++) {
+    const value = { slot: i, trackId: tracks[i].trackId };
+    trackArtists.push(value);
+  }
+
+  return trackArtists;
+}
+
 let flattenedPlaylists = flattenPlaylists(playlists);
 // console.log(flattenItem);
 
@@ -207,4 +222,7 @@ let flattenedTracks = dedupeTracks(flattenedScoreTracks);
 // console.log(flattenedTracks);
 
 let enforcedTrack = enforceArtistQuota(flattenedTracks, 4);
-console.log(enforcedTrack); // Only 4 Artists
+// console.log(enforcedTrack); // Only 4 Artists
+
+let scheduleArtist = buildSchedule(enforcedTrack);
+console.log(scheduleArtist);
