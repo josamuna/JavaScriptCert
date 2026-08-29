@@ -68,6 +68,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 15. SpaceMissionRoster - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/15-SpaceMissionRoster)
 - [x] 16. HeritageLibraryCatalog - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/16-HeritageLibraryCatalog)
 - [x] 17. FestivalCrowdFlowSimulator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/17-FestivalCrowdFlowSimulator)
+- [ ] 18. LibraryManager - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Workshop/18-LibraryManager)
 
 ## Certification Projects
 
