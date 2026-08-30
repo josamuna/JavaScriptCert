@@ -77,3 +77,9 @@ function getBookSummaries(catalog) {
 console.log(getBookSummaries(library));
 
 console.log("\nList of books by Arvid Kahl:\n");
+
+function getBooksByAuthor(catalog, author) {
+  return catalog.filter((book) => book.author === author);
+}
+
+console.log(getBooksByAuthor(library, "Arvid Kahl"));
