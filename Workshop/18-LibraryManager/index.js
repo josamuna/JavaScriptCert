@@ -83,3 +83,14 @@ function getBooksByAuthor(catalog, author) {
 }
 
 console.log(getBooksByAuthor(library, "Arvid Kahl"));
+
+console.log("\nList of books by James Clear:\n");
+console.log(getBooksByAuthor(library, "James Clear"));
+
+console.log("\nTotal number of pages for all library books:\n");
+
+function getTotalPages(books) {
+  return books.reduce((accu, book) => accu + book.pages, 0);
+}
+
+console.log(getTotalPages(library));
