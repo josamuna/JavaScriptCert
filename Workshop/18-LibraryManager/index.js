@@ -59,3 +59,11 @@ const library = [
     pages: 500,
   },
 ];
+
+console.log("Books in the Library:\n");
+
+function getBookInformation(catalog) {
+  return catalog.map((book) => book.title);
+}
+
+console.log(getBookInformation(library));
