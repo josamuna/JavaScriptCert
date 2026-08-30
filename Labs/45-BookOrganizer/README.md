@@ -1,4 +1,4 @@
-# 45-BookOrganizer
+# BookOrganizer
 
 Building a Book Organizer Project.
 
