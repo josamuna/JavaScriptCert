@@ -63,7 +63,7 @@ const library = [
 console.log("Books in the Library:\n");
 
 function getBookInformation(catalog) {
-  return catalog.map((book) => book.title);
+  return catalog.map((book) => `${book.title} by ${book.author}`).join("\n");
 }
 
 console.log(getBookInformation(library));
