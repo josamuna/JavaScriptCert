@@ -51,6 +51,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 45. BookOrganizer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/45-BookOrganizer)
 - [x] 46. SortedIndexFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/46-SortedIndexFinder)
 - [x] 47. SymmetricDifferenceFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/47-SymmetricDifferenceFunction)
+- [ ] 48. ImplementValueRemoverFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/48-ImplementValueRemoverFunction)
 
 ## Workshop
 
