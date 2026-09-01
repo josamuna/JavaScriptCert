@@ -7,7 +7,7 @@ function getIndexToIns(values, num) {
   if (!Array.isArray(values)) {
     return;
   }
-  if (Number.isNaN(num) || num < 0) {
+  if (Number.isNaN(num)) {
     return;
   }
 
@@ -22,7 +22,12 @@ function getIndexToIns(values, num) {
     (value, index, tab) => num >= tab[index] && num <= tab[index + 1],
   );
 
-  // Index matches the first array value.
+  // Number valu is out of the greather array's values. The array's size one should be returned.
+  if (numIndex === -1) {
+    return sortedValues.length;
+  }
+
+  // Index matches the first array's value or not.
   num === sortedValues[0] ? numIndex : numIndex++;
 
   return numIndex;
@@ -44,6 +49,6 @@ console.log(getIndexToIns([5, 3, 20, 3], 5)); // 2
 
 console.log(getIndexToIns([2, 20, 10], 19)); // 2
 
-console.log("===3", getIndexToIns([3, 10, 5], 11)); // 3 | 0
+console.log(getIndexToIns([3, 10, 5], 11)); // 3
 
 console.log(getIndexToIns([], 5)); // 0

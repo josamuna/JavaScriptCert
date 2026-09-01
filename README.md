@@ -49,7 +49,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 43. ImplementElementSkipper - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/43-ImplementElementSkipper)
 - [x] 44. PlaylistRemixEngine - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/44-PlaylistRemixEngine)
 - [x] 45. BookOrganizer - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/45-BookOrganizer)
-- [ ] 46. SortedIndexFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/46-SortedIndexFinder)
+- [x] 46. SortedIndexFinder - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/46-SortedIndexFinder)
 
 ## Workshop
 
