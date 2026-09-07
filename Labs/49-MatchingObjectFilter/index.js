@@ -30,11 +30,9 @@ function whatIsInAName(names, sourceObj) {
     return;
   }
 
-  const keys = Object.keys(sourceObj);
-  let arrayNames = [];
-  keys.forEach((key) => {
-    arrayNames = names.filter((name) => {
-      return Object.hasOwn(name, key) && name[key] === sourceObj[key];
+  const arrayNames = names.filter((name) => {
+    return Object.keys(sourceObj).every((key) => {
+      return Object.hasOwn(sourceObj, key) && name[key] === sourceObj[key];
     });
   });
 
@@ -78,14 +76,14 @@ outputResult = whatIsInAName(
   ],
   { apple: 1, bat: 2 },
 );
-console.log(outputResult); // [{"apple": 1, "bat": 2}, {"apple": 1, "bat": 2, "cookie": 2}]====
+console.log(outputResult); // [{"apple": 1, "bat": 2}, {"apple": 1, "bat": 2, "cookie": 2}]
 
-outputResult = whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 }); //
-console.log(outputResult); //
+outputResult = whatIsInAName([{ a: 1, b: 2, c: 3 }], { a: 1, b: 9999, c: 3 });
+console.log(outputResult); // []
 
 outputResult = whatIsInAName([{ a: 1, b: 2, c: 3, d: 9999 }], {
   a: 1,
   b: 9999,
   c: 3,
-}); //
-console.log(outputResult); //
+});
+console.log(outputResult); // []
