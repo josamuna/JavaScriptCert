@@ -53,6 +53,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 47. SymmetricDifferenceFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/47-SymmetricDifferenceFunction)
 - [x] 48. ImplementValueRemoverFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/48-ImplementValueRemoverFunction)
 - [x] 49. MatchingObjectFilter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/49-MatchingObjectFilter)
+- [ ] 50. RangeBasedLCMCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/50-RangeBasedLCMCalculator)
 
 ## Workshop
 
