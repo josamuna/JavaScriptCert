@@ -7,3 +7,15 @@
   by both numbers and all sequential numbers in the range between them.
   3. The function should handle input where the two numbers are not in numerical order.
 */
+
+function smallestCommons(numbers) {
+  if (!Array.isArray(numbers) || numbers.length === 0) {
+    return;
+  }
+
+  if (numbers.length > 2) {
+    return;
+  }
+
+  //numbers.filter(num => )
+}
