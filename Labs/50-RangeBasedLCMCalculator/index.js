@@ -9,48 +9,50 @@
 */
 
 function smallestCommons(numbers) {
-  if (!Array.isArray(numbers) || numbers.length === 0) {
+  if (!Array.isArray(numbers) || numbers.length !== 2) {
     return;
   }
 
-  if (numbers.length > 2) {
-    return;
-  }
+  // Gets the threshold values.
+  const start = Math.min(numbers[0], numbers[1]);
+  const end = Math.max(numbers[0], numbers[1]);
 
   // create an array from values between the treshold.
   const newNumbers = [];
-  if (numbers[0] > numbers[1]) {
-    for (let i = numbers[1]; i <= numbers[0]; i++) {
-      newNumbers.push(i);
-    }
-  } else {
-    for (let i = numbers[0]; i <= numbers[1]; i++) {
-      newNumbers.push(i);
-    }
+
+  for (let i = start; i <= end; i++) {
+    newNumbers.push(i);
   }
 
-  let count = 1;
+  // The final output value should be at least divisible by the greatest number, which is the largest threshold value.
+  let count = end;
 
   while (true) {
-    const multiples = newNumbers.map((num) => {
-      return count % num === 0 ? count : num;
-    });
-    console.log(multiples);
-    const matched = multiples.every((numValue) => {
-      return numValue === count;
-    });
-
-    //console.log("------>", count, matched);
+    const matched = newNumbers.every((num) => count % num === 0);
 
     if (matched) {
       return count;
     }
-    count++;
+    // The new value should always be a multiple of the largest threshold, which is end.
+    count += end;
   }
 }
 
-let smallestCommonsValue = smallestCommons([23, 18]);
+let smallestCommonsValue = smallestCommons([1, 5]);
 console.log(smallestCommonsValue); // 60
+
+smallestCommonsValue = smallestCommons([5, 1]);
+console.log(smallestCommonsValue); // 60
+
+smallestCommonsValue = smallestCommons([2, 10]);
+console.log(smallestCommonsValue); // 2520
+
+smallestCommonsValue = smallestCommons([1, 13]);
+console.log(smallestCommonsValue);
+360360;
+
+smallestCommonsValue = smallestCommons([23, 18]);
+console.log(smallestCommonsValue); // 6056820
 
 // ===================================================================
 
