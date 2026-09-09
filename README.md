@@ -54,6 +54,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 48. ImplementValueRemoverFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/48-ImplementValueRemoverFunction)
 - [x] 49. MatchingObjectFilter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/49-MatchingObjectFilter)
 - [x] 50. RangeBasedLCMCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/50-RangeBasedLCMCalculator)
+- [ ] 51. DeepFlatteningTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/51-DeepFlatteningTool)
 
 ## Workshop
 
