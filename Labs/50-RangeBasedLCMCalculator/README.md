@@ -14,8 +14,54 @@ Implementing a Range Based LCM Calculator Project.
   by both numbers and all sequential numbers in the range between them.
   3. The function should handle input where the two numbers are not in numerical order.
 */
+
+function smallestCommons(numbers) {
+  if (!Array.isArray(numbers) || numbers.length !== 2) {
+    return;
+  }
+
+  // Gets the threshold values.
+  const start = Math.min(numbers[0], numbers[1]);
+  const end = Math.max(numbers[0], numbers[1]);
+
+  // create an array from values between the treshold.
+  const newNumbers = [];
+
+  for (let i = start; i <= end; i++) {
+    newNumbers.push(i);
+  }
+
+  // The final output value should be at least divisible by the greatest number, which is the largest threshold value.
+  let count = end;
+
+  while (true) {
+    const matched = newNumbers.every((num) => count % num === 0);
+
+    if (matched) {
+      return count;
+    }
+    // The new value should always be a multiple of the largest threshold, which is end.
+    count += end;
+  }
+}
+
+let smallestCommonsValue = smallestCommons([1, 5]);
+console.log(smallestCommonsValue); // 60
+
+smallestCommonsValue = smallestCommons([5, 1]);
+console.log(smallestCommonsValue); // 60
+
+smallestCommonsValue = smallestCommons([2, 10]);
+console.log(smallestCommonsValue); // 2520
+
+smallestCommonsValue = smallestCommons([1, 13]);
+console.log(smallestCommonsValue);
+360360;
+
+smallestCommonsValue = smallestCommons([23, 18]);
+console.log(smallestCommonsValue); // 6056820
 ```
 
 ## Output
 
-![Image]()
+![Image](https://github.com/user-attachments/assets/6708a703-8453-4e26-8b83-da786905cc1b)
