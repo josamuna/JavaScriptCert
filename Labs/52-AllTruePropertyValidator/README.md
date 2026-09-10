@@ -33,10 +33,17 @@ Building an All True Poject Validator Project.
 */
 
 function truthCheck(collection, pre) {
-  return pre;
+  if (!Array.isArray(collection) || collection.length === 0) {
+    return;
+  }
+
+  const isTruthValue = collection.every((obj) => {
+    return Object.hasOwn(obj, pre) && obj[pre];
+  });
+  return isTruthValue;
 }
 
-truthCheck(
+let isTruth = truthCheck(
   [
     { name: "Quincy", role: "Founder", isBot: false },
     { name: "Naomi", role: "", isBot: false },
@@ -44,8 +51,104 @@ truthCheck(
   ],
   "isBot",
 );
+console.log(isTruth); // false
+
+isTruth = truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true },
+  ],
+  "name",
+);
+console.log(isTruth); // true
+
+isTruth = truthCheck(
+  [
+    { name: "Quincy", role: "Founder", isBot: false },
+    { name: "Naomi", role: "", isBot: false },
+    { name: "Camperbot", role: "Bot", isBot: true },
+  ],
+  "role",
+);
+console.log(isTruth); // false
+
+isTruth = truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+  ],
+  "number",
+);
+console.log(isTruth); // true
+
+isTruth = truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "caught",
+);
+console.log(isTruth); // false
+
+isTruth = truthCheck(
+  [
+    { name: "Pikachu", number: 25, caught: 3 },
+    { name: "Togepi", number: 175, caught: 1 },
+    { name: "MissingNo", number: NaN, caught: 0 },
+  ],
+  "caught",
+);
+console.log(isTruth); // false
+
+isTruth = truthCheck(
+  [
+    { name: "Quincy", username: "QuincyLarson" },
+    { name: "Naomi", username: "nhcarrigan" },
+    { name: "Camperbot" },
+  ],
+  "username",
+);
+console.log(isTruth); // false
+
+isTruth = truthCheck(
+  [
+    { name: "freeCodeCamp", users: [{ name: "Quincy" }, { name: "Naomi" }] },
+    { name: "Code Radio", users: [{ name: "Camperbot" }] },
+    { name: "", users: [] },
+  ],
+  "users",
+);
+console.log(isTruth); // true
+
+isTruth = truthCheck(
+  [
+    { id: 1, data: { url: "https://freecodecamp.org", name: "freeCodeCamp" } },
+    {
+      id: 2,
+      data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" },
+    },
+    { id: null, data: {} },
+  ],
+  "data",
+);
+console.log(isTruth); // true
+
+isTruth = truthCheck(
+  [
+    { id: 1, data: { url: "https://freecodecamp.org", name: "freeCodeCamp" } },
+    {
+      id: 2,
+      data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" },
+    },
+    { id: null, data: {} },
+  ],
+  "id",
+);
+console.log(isTruth); // false
 ```
 
 ## Output
 
-![Image]()
+![Image](https://github.com/user-attachments/assets/3301d11c-0586-4a4d-9347-1af645a88937)
