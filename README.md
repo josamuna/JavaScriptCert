@@ -1,6 +1,6 @@
 # JavaScriptCert
 
-This is a journey of learning to gain a JavaScript certification on freeCodeCamp. The repository will be organized to show workshop projects (course materials) and labs (completed projects) with corresponding screenshots.
+This is a learning journey to earn a JavaScript certification on freeCodeCamp. The repository is organized to display workshop projects (course materials) and completed projects (labs), along with their corresponding screenshots.
 
 ## Labs
 
@@ -54,7 +54,7 @@ This is a journey of learning to gain a JavaScript certification on freeCodeCamp
 - [x] 48. ImplementValueRemoverFunction - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/48-ImplementValueRemoverFunction)
 - [x] 49. MatchingObjectFilter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/49-MatchingObjectFilter)
 - [x] 50. RangeBasedLCMCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/50-RangeBasedLCMCalculator)
-- [ ] 51. DeepFlatteningTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/51-DeepFlatteningTool)
+- [x] 51. DeepFlatteningTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/51-DeepFlatteningTool)
 
 ## Workshop
 
