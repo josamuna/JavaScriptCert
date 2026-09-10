@@ -55,6 +55,7 @@ This is a learning journey to earn a JavaScript certification on freeCodeCamp. T
 - [x] 49. MatchingObjectFilter - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/49-MatchingObjectFilter)
 - [x] 50. RangeBasedLCMCalculator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/50-RangeBasedLCMCalculator)
 - [x] 51. DeepFlatteningTool - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/51-DeepFlatteningTool)
+- [ ] 52. AllTruePropertyValidator - [Source code](https://github.com/josamuna/JavaScriptCert/tree/main/Labs/52-AllTruePropertyValidator)
 
 ## Workshop
 
